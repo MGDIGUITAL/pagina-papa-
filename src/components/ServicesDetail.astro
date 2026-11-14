@@ -1,0 +1,196 @@
+---
+const detailedServices = [
+  {
+    id: "servicio-ingenieria",
+    code: "ESP-01",
+    title: "Ingeniería y Desarrollo de Proyectos",
+    formValue: "Ingeniería y Desarrollo de Proyectos",
+    norms: ["NCh 2369 / NCh 432", "CAD 3D / BIM", "EPC / EPCM"],
+    description:
+      "Desarrollamos ingeniería conceptual, básica y de detalle para proyectos industriales, mineros y energéticos, garantizando constructibilidad en faena, interferencia cero y optimización de CAPEX.",
+    deliverables: [
+      "Levantamientos críticos en terreno con precisión láser y modelamiento 3D / CAD",
+      "Memorias de cálculo estructural, mecánico e hidráulico bajo norma sísmica NCh 2369",
+      "Planos de fabricación en taller, montaje, isométricos de piping y listas de materiales (MTO)",
+      "Cubicaciones detalladas, presupuestos CAPEX y programación en Carta Gantt",
+    ],
+  },
+  {
+    id: "servicio-montaje",
+    code: "ESP-02",
+    title: "Montaje Industrial y Electromecánico",
+    formValue: "Montaje Industrial y Electromecánico",
+    norms: ["Rigging Certificado", "ISO 10816 Láser", "Comisionamiento PEM"],
+    description:
+      "Ejecución integral de montajes mecánicos y electromecánicos de equipos de proceso, sistemas de manejo de minerales, bombas de impulsión, estanques, molinos y chancadores.",
+    deliverables: [
+      "Montaje mecánico y alineamiento láser de precisión para equipos rotatorios y estáticos",
+      "Instalación de correas transportadoras (Overland), estaciones motrices, chutes y harneros",
+      "Maniobras de izaje pesado con planes de Rigging certificados y Rigger acreditado",
+      "Pruebas pre-operacionales en vacío/carga, comisionamiento y Puesta en Marcha (PEM)",
+    ],
+  },
+  {
+    id: "servicio-estructuras",
+    code: "ESP-03",
+    title: "Fabricación y Montaje de Estructuras Metálicas",
+    formValue: "Fabricación y Montaje de Estructuras",
+    norms: ["AWS D1.1", "Ensayos END", "SSPC-SP10 / Epóxico"],
+    description:
+      "Fabricación en maestranza y montaje en terreno de estructuras metálicas pesadas, medianas y livianas en aceros ASTM A36 / A572 bajo estrictos controles de soldadura y recubrimiento.",
+    deliverables: [
+      "Naves industriales, edificios de proceso, galpones, puentes grúa y pipe racks",
+      "Plataformas de operación, pasarelas, escaleras marineras y barandas normadas",
+      "Soldadores calificados AWS D1.1 (WPS/PQR) y ensayos no destructivos (END: UT, PT, MT)",
+      "Granallado comercial/metal blanco (SSPC-SP10) y esquemas epóxicos/poliuretano",
+    ],
+  },
+  {
+    id: "servicio-piping",
+    code: "ESP-04",
+    title: "Piping Industrial y Redes Contra Incendio",
+    formValue: "Piping e Instalaciones Industriales",
+    norms: ["ASME B31.3", "NFPA 13/14/20/24", "Inox / Carbono / HDPE"],
+    description:
+      "Prefabricación de spools y montaje de cañerías industriales en acero carbono (Sch 40/80), acero inoxidable (304L/316L) y HDPE por termofusión para procesos y protección contra incendios.",
+    deliverables: [
+      "Prefabricación de spools en maestranza y montaje de líneas de proceso en planta",
+      "Redes húmedas y secas contra incendio, salas de bombas y anillos perimetrales NFPA",
+      "Montaje de válvulas, manifolds, soportación sísmica y líneas de alta presión",
+      "Pruebas hidrostáticas certificadas, flushing, pasivado y Dossier QA/QC completo",
+    ],
+  },
+  {
+    id: "servicio-electricidad",
+    code: "ESP-05",
+    title: "Electricidad e Instrumentación (E&I)",
+    formValue: "Electricidad e Instrumentación",
+    norms: ["SEC Pliegos RIC", "Salas CCM & VDF", "Loop Check / PLC"],
+    description:
+      "Soluciones integrales de fuerza, control, canalizaciones industriales e instrumentación de campo para automatización y continuidad operativa de plantas de proceso.",
+    deliverables: [
+      "Montaje e integración de salas eléctricas, tableros de fuerza, control, VDF y CCM",
+      "Tendido de alimentadores, escalerillas portaconductores (EPC) y conduit ANSI/EMT",
+      "Instalación, calibración y conexionado de instrumentación de flujo, presión y nivel",
+      "Mallas de puesta a tierra, iluminación industrial LED, pruebas de lazo y trámite SEC TE1",
+    ],
+  },
+  {
+    id: "servicio-mantenimiento",
+    code: "ESP-06",
+    title: "Mantenimiento Industrial y Paradas de Planta",
+    formValue: "Mantenimiento Industrial",
+    norms: ["Shutdowns 24/7", "Bloqueo LOTO", "Confiabilidad Activos"],
+    description:
+      "Contratos de mantenimiento preventivo, correctivo y paradas de planta programadas (Shutdowns) ejecutadas en ventanas críticas para maximizar la disponibilidad de activos.",
+    deliverables: [
+      "Ejecución de paradas de planta (Shutdowns) con cuadrillas en turnos continuos",
+      "Cambio de revestimientos, blindajes y componentes sometidos a desgaste abrasivo",
+      "Overhaul mecánico, reparación estructural, calderería y cambio de spools en operación",
+      "Respuesta rápida 24/7 ante contingencias operacionales bajo protocolo LOTO",
+    ],
+  },
+];
+---
+
+<section id="servicios" class="py-16 lg:py-22 bg-[#F3F6FA] border-b border-slate-200/80 bg-light-grid">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#081C36]/[0.07] border border-[#081C36]/15 text-[#081C36] font-mono-tech font-bold text-[11px] uppercase tracking-wider mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#F07218]"></span>
+          <span>6 DIVISIONES OPERATIVAS // INGENIERÍA, MONTAJE & MANTENIMIENTO</span>
+        </div>
+        <div class="flex items-center gap-3.5">
+          <span class="w-[6px] h-9 bg-[#F07218] rounded-sm"></span>
+          <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#081C36] tracking-tight">
+            Especialidades Técnicas de EC Ingeniería
+          </h2>
+        </div>
+      </div>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl leading-relaxed">
+        Abordamos cada contrato con cuadrillas acreditadas, supervisión HSE permanente en terreno y equipamiento certificado para minería, energía, puertos e industria.
+      </p>
+    </div>
+
+    <!-- 6 Detailed Service Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {detailedServices.map((srv) => (
+        <div
+          id={srv.id}
+          class="group card-engineered rounded-2xl p-6 sm:p-7 hover:-translate-y-1 flex flex-col justify-between scroll-mt-28 overflow-hidden"
+        >
+          <span class="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#081C36] via-[#F07218] to-[#081C36] opacity-80 group-hover:opacity-100"></span>
+          <div>
+            <!-- Top Row: Monospace Code + Normative Badges -->
+            <div class="flex items-center justify-between gap-2 mb-4 pt-1">
+              <span class="inline-flex items-center justify-center px-2.5 py-1.5 rounded-lg bg-[#081C36] group-hover:bg-[#F07218] text-white font-mono-tech font-bold text-xs shadow-sm transition-colors">
+                {srv.code}
+              </span>
+              <div class="flex flex-wrap justify-end gap-1.5">
+                {srv.norms.map((norm) => (
+                  <span class="px-2 py-1 rounded bg-slate-100 border border-slate-200/80 group-hover:bg-[#F07218]/10 group-hover:border-[#F07218]/30 text-[10.5px] font-mono-tech font-bold text-slate-600 group-hover:text-[#D95D07] transition-colors">
+                    {norm}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Title -->
+            <h3 class="font-heading font-extrabold text-lg sm:text-[19px] text-[#081C36] group-hover:text-[#F07218] transition-colors leading-snug mb-3">
+              {srv.title}
+            </h3>
+
+            <!-- Description -->
+            <p class="text-slate-600 text-sm leading-relaxed mb-5">
+              {srv.description}
+            </p>
+
+            <!-- Deliverables Checklist -->
+            <div class="pt-4 border-t border-slate-200/80 space-y-2.5 mb-6">
+              <div class="font-mono-tech text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-1">
+                Alcance & Entregables de Obra:
+              </div>
+              {srv.deliverables.map((item) => (
+                <div class="flex items-start gap-2.5 text-xs sm:text-[13px] text-slate-700 font-medium leading-snug">
+                  <svg class="w-4 h-4 text-[#F07218] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Card Footer CTA -->
+          <a
+            href="#contacto"
+            data-service-select={srv.formValue}
+            class="service-quote-trigger inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#F3F6FA] border border-slate-200/80 group-hover:bg-[#081C36] group-hover:border-[#081C36] text-[#081C36] group-hover:text-white font-heading font-bold text-xs uppercase tracking-wider transition-all"
+          >
+            <span>Cotizar esta especialidad</span>
+            <svg class="w-4 h-4 text-[#F07218] transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.service-quote-trigger').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetService = btn.getAttribute('data-service-select');
+      const selectEl = document.getElementById('service') as HTMLSelectElement | null;
+      if (targetService && selectEl) {
+        selectEl.value = targetService;
+        selectEl.dispatchEvent(new Event('change'));
+      }
+    });
+  });
+</script>

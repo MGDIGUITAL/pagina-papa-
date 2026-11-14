@@ -1,0 +1,202 @@
+---
+const stats = [
+  { value: "+15 Años", code: "TRK-01", label: "Trayectoria Industrial", detail: "Minería, Energía, Puertos e Industria" },
+  { value: "100%", code: "HSE-02", label: "Estándar Cero Daño", detail: "Gestión DS 132, IPER, ART y Bloqueo LOTO" },
+  { value: "+120", code: "EPC-03", label: "Contratos Ejecutados", detail: "Cobertura Nacional de Norte a Sur" },
+  { value: "24/7", code: "OPS-04", label: "Continuidad Operacional", detail: "Paradas de Planta (Shutdowns) y Emergencias" },
+];
+
+const sectors = [
+  { code: "SEC-01", name: "Gran y Mediana Minería", detail: "Plantas concentradoras, chancado primario/secundario, molienda, espesadores y lixiviación." },
+  { code: "SEC-02", name: "Energía y Terminales Marítimos", detail: "Subestaciones, salas de bombas, estanques API y redes húmedas/secas contra incendio NFPA." },
+  { code: "SEC-03", name: "Industria de Procesos y Manufactura", detail: "Plantas químicas, celulosa, agroindustria, alimentos y líneas de proceso en acero inoxidable." },
+  { code: "SEC-04", name: "Infraestructura & Maestranza", detail: "Naves industriales de gran luz, galpones, pipe racks, pasarelas normadas y sistemas de impulsión." },
+];
+---
+
+<section id="quienes-somos" class="py-16 lg:py-22 bg-white border-b border-slate-200/80 relative overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      
+      <!-- Left: Institutional Corporate Narrative -->
+      <div class="lg:col-span-7 space-y-5">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-lg bg-[#081C36]/[0.06] border border-[#081C36]/15 text-[#081C36] font-mono-tech font-bold text-[11px] uppercase tracking-wider">
+          <span class="w-2 h-2 rounded-full bg-[#F07218]"></span>
+          <span>EC INGENIERÍA // PERFIL CORPORATIVO & RESPALDO EPC</span>
+        </div>
+
+        <div class="flex items-start gap-3.5">
+          <span class="w-[6px] h-11 bg-[#F07218] rounded-sm shrink-0 mt-1"></span>
+          <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-[38px] text-[#081C36] leading-[1.12] tracking-tight">
+            Ingeniería, Fabricación y Montaje Industrial con <span class="text-[#F07218]">Respaldo Técnico Trazable</span>
+          </h2>
+        </div>
+
+        <p class="text-slate-600 text-base sm:text-[16.5px] leading-[1.68]">
+          Con <strong>Cobertura Nacional en todo Chile</strong> y capacidad de movilización hacia faenas en zona norte, centro y sur, <strong>EC Ingeniería</strong> ejecuta contratos integrales de ingeniería multidisciplinaria, prefabricación en maestranza, montaje estructural, piping de proceso, obras civiles, electricidad e instrumentación y mantenimiento de plantas industriales.
+        </p>
+
+        <p class="text-slate-600 text-base sm:text-[16.5px] leading-[1.68]">
+          Aseguramos el control técnico en cada fase crítica del proyecto: desde el levantamiento dimensional 3D/CAD y la fabricación calificada hasta el montaje en terreno, pruebas hidrostáticas y Puesta en Marcha (<strong class="font-mono-tech text-xs px-1.5 py-0.5 rounded bg-slate-100 text-[#081C36]">PEM</strong>), entregando a cada mandante su respectivo <strong>Dossier de Calidad QA/QC</strong> bajo normativa minera e industrial (<strong class="font-mono-tech text-xs px-1.5 py-0.5 rounded bg-slate-100 text-[#081C36]">DS 132 / AWS / ASME / NFPA</strong>).
+        </p>
+
+        <!-- Dual Technical Pillars -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+          <div class="card-engineered rounded-xl p-4 sm:p-5 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-[#081C36] text-[#F07218] border border-white/10 flex items-center justify-center shrink-0 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="font-heading font-extrabold text-sm text-[#081C36]">Seguridad Operacional (HSE)</h3>
+                <span class="font-mono-tech text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">DS 132</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Matrices IPER auditadas, procedimientos de bloqueo LOTO, planes de izaje Rigging certificados y acreditación rápida en plataformas de mandantes.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-engineered rounded-xl p-4 sm:p-5 flex items-start gap-3.5">
+            <div class="w-11 h-11 rounded-xl bg-[#081C36] text-[#F07218] border border-white/10 flex items-center justify-center shrink-0 shadow-sm">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+              </svg>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="font-heading font-extrabold text-sm text-[#081C36]">Aseguramiento QA/QC</h3>
+                <span class="font-mono-tech text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-50 text-[#D95D07] border border-orange-200">AWS / ASME</span>
+              </div>
+              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                Soldadores calificados 6G, certificados de colada de materiales, ensayos no destructivos (END), pruebas de presión y planos As-Built finales.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Institutional Guarantee Strip (Pure Company Brand — EC Ingeniería) -->
+        <div class="p-4 sm:p-5 rounded-xl bg-carbon-steel text-white flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-white/15 shadow-[0_12px_30px_rgba(8,28,54,0.2)]">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F58220] to-[#D95D07] text-white font-mono-tech font-extrabold text-base flex items-center justify-center shrink-0 shadow-md border border-white/20">
+              EC
+            </div>
+            <div>
+              <div class="text-[10.5px] font-mono-tech font-bold uppercase tracking-widest text-[#FF8A33]">
+                EC INGENIERÍA • GERENCIA DE OPERACIONES Y PROYECTOS
+              </div>
+              <div class="font-heading font-extrabold text-sm sm:text-base text-white mt-0.5">
+                Atención Corporativa a Licitaciones, Contratos EPC y Paradas de Planta
+              </div>
+              <div class="text-xs text-slate-300 mt-0.5">
+                Supervisión técnica en terreno desde la adjudicación hasta la recepción conforme y entrega de Dossier QA/QC.
+              </div>
+            </div>
+          </div>
+          <a
+            href="/assets/Dossier_Corporativo_EC_Ingenieria.pdf"
+            download="Dossier_Corporativo_EC_Ingenieria.pdf"
+            class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-white/10 hover:bg-[#F07218] border border-white/20 hover:border-[#F07218] text-white font-mono-tech font-bold text-xs uppercase tracking-wider transition-all shrink-0"
+          >
+            <svg class="w-4 h-4 text-[#F07218] group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            <span>Dossier PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: HD Engineering Workshop Photo + Corporate Metrics Card -->
+      <div class="lg:col-span-5 space-y-5">
+        <!-- Maestranza & Engineering Supervision Photo -->
+        <div class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200/90 h-56 sm:h-64 group">
+          <img
+            src="/assets/about-maestranza.webp"
+            alt="Equipo técnico de EC Ingeniería revisando planos en maestranza de estructuras y piping"
+            class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#051224]/92 via-[#051224]/25 to-transparent"></div>
+          <div class="absolute top-3.5 right-3.5 px-2.5 py-1 rounded bg-[#081C36]/85 backdrop-blur-md border border-white/15 font-mono-tech text-[10px] font-bold text-amber-300">
+            QA/QC // TALLER & FAENA
+          </div>
+          <div class="absolute bottom-3.5 left-4 right-4 flex items-end justify-between gap-2 text-white">
+            <div>
+              <span class="px-2.5 py-0.5 rounded bg-[#F07218] text-[10px] font-mono-tech font-extrabold uppercase tracking-wider">
+                Maestranza & Terreno
+              </span>
+              <p class="font-heading font-bold text-sm mt-1">
+                Control Dimensional, Prefabricación de Spools y Estructuras
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate Telemetry & KPI Card -->
+        <div class="rounded-2xl bg-carbon-steel p-6 sm:p-7 text-white shadow-xl border border-white/15 relative overflow-hidden">
+          <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/15">
+            <div>
+              <span class="text-[11px] font-mono-tech font-bold uppercase tracking-widest text-[#F07218]">
+                INDICADORES OPERATIVOS // EC INGENIERÍA
+              </span>
+              <h3 class="font-heading font-extrabold text-lg sm:text-xl text-white mt-0.5">
+                Capacidad Comprobada en Terreno
+              </h3>
+            </div>
+            <span class="px-3 py-1 rounded-md bg-white/10 border border-white/15 text-[11px] font-mono-tech font-bold text-amber-300">
+              CHILE
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3.5">
+            {stats.map((st) => (
+              <div class="p-3.5 rounded-xl bg-white/[0.05] border border-white/12 hover:border-[#F07218]/60 transition-colors">
+                <div class="flex items-center justify-between mb-1">
+                  <span class="font-heading font-extrabold text-xl sm:text-2xl text-[#F07218]">
+                    {st.value}
+                  </span>
+                  <span class="font-mono-tech text-[9.5px] text-slate-400">{st.code}</span>
+                </div>
+                <div class="font-heading font-bold text-xs sm:text-sm text-white">
+                  {st.label}
+                </div>
+                <div class="text-[11px] text-slate-300 mt-0.5 leading-snug">
+                  {st.detail}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Industry Sectors Strip -->
+    <div class="mt-12 pt-8 border-t border-slate-200/90">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5">
+        <span class="font-heading font-extrabold text-xs uppercase tracking-widest text-[#081C36]">
+          Sectores Industriales y Mandantes que Atendemos en Chile
+        </span>
+        <span class="font-mono-tech text-[11px] font-semibold text-slate-500">
+          ACREDITACIÓN DOCUMENTAL • SEGURIDAD DS 132 • TRAZABILIDAD QA/QC
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {sectors.map((sec) => (
+          <div class="card-engineered p-4 rounded-xl flex items-start gap-3">
+            <span class="inline-flex items-center justify-center px-2 py-1 rounded-md bg-[#081C36] text-[#F07218] font-mono-tech font-bold text-[10px] shrink-0 mt-0.5">
+              {sec.code}
+            </span>
+            <div>
+              <h4 class="font-heading font-bold text-sm text-[#081C36]">{sec.name}</h4>
+              <p class="text-xs text-slate-600 mt-1 leading-relaxed">{sec.detail}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

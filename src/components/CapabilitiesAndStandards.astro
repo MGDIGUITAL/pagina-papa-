@@ -1,0 +1,176 @@
+---
+const capabilities = [
+  {
+    code: "CAP-01 // PLANTA",
+    badge: "Maestranza & Prefabricación",
+    title: "Capacidad en Maestranza y Control Dimensional",
+    subtitle: "Fabricación calificada, pruebas en taller y trazabilidad de materiales antes del despacho a faena.",
+    items: [
+      "Prefabricación de spools de cañerías en acero carbono (ASTM A53/A106), inoxidable (304L/316L) y aleaciones.",
+      "Fabricación de estructuras metálicas pesadas, medianas y livianas (naves, pipe racks, plataformas y chutes).",
+      "Procedimientos de soldadura calificados (WPS/PQR) bajo código AWS D1.1 y ASME Sección IX.",
+      "Granallado comercial/metal blanco (SSPC-SP6 / SP10) y esquemas epóxicos / poliuretano con control de micraje.",
+    ],
+  },
+  {
+    code: "CAP-02 // FAENA",
+    badge: "Despliegue Nacional",
+    title: "Operación en Terreno y Faena Minera / Industrial",
+    subtitle: "Cuadrillas multidisciplinarias acreditadas para montajes críticos y paradas de planta (Shutdowns).",
+    items: [
+      "Maniobras de izaje estructural y mecánico con planes de Rigging certificados y supervisión HSE permanente.",
+      "Montaje y alineamiento láser de precisión para bombas, chancadores, reductores, harneros y correas Overland.",
+      "Termofusión y electrofusión de tuberías HDPE para impulsión de agua, soluciones y procesos mineros.",
+      "Pruebas hidrostáticas, neumáticas, flushing, comisionamiento y soporte en Puesta en Marcha (PEM).",
+    ],
+  },
+];
+
+const standards = [
+  {
+    code: "AWS D1.1 / ASME IX",
+    tag: "SOLDADURA",
+    name: "Calificación Estructural y de Cañerías",
+    desc: "Soldadores calificados 6G y ensayos no destructivos (END: tintas penetrantes, partículas magnéticas, radiografía y ultrasonido).",
+  },
+  {
+    code: "ASME B31.1 / B31.3",
+    tag: "PIPING",
+    name: "Tuberías de Proceso y Alta Presión",
+    desc: "Fabricación, montaje, soportación sísmica y pruebas hidrostáticas para líneas de proceso, vapor, aire comprimido y pulpa.",
+  },
+  {
+    code: "NFPA 13 / 14 / 20 / 24",
+    tag: "INCENDIO",
+    name: "Redes Contra Incendio Industrial",
+    desc: "Ingeniería y ejecución de salas de bombas, redes húmedas/secas, anillos perimetrales, válvulas OS&Y/PIV, monitores y grifos.",
+  },
+  {
+    code: "NCh 2369 / NCh 428",
+    tag: "ESTRUCTURAL",
+    name: "Diseño Sísmico de Instalaciones Industriales",
+    desc: "Cumplimiento estricto de normativa chilena para estructuras de acero, anclajes ASTM F1554, grouting de nivelación y naves.",
+  },
+  {
+    code: "SEC / Pliegos RIC",
+    tag: "ELÉCTRICO",
+    name: "Normativa Eléctrica e Instrumentación",
+    desc: "Salas eléctricas, tableros CCM/VDF, canalizaciones EPC/Conduit, mallas de puesta a tierra, Loop Check y certificación TE1.",
+  },
+  {
+    code: "DS 132 / Ley 16.744",
+    tag: "HSE MINERO",
+    name: "Seguridad Minera y Estándar Cero Daño",
+    desc: "Gestión preventiva en terreno (Matriz IPER, ART, bloqueo LOTO, trabajo en altura y espacios confinados) con meta Cero Daño.",
+  },
+];
+---
+
+<section id="capacidades" class="py-16 lg:py-22 bg-white border-b border-slate-200/80">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+    
+    <!-- Section Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#F07218]/10 border border-[#F07218]/25 text-[#D95D07] font-mono-tech font-bold text-[11px] uppercase tracking-wider mb-3">
+          <span class="w-2 h-2 rounded-full bg-[#F07218]"></span>
+          <span>EC INGENIERÍA // CAPACIDAD OPERATIVA & CUMPLIMIENTO NORMATIVO</span>
+        </div>
+        <div class="flex items-center gap-3.5">
+          <span class="w-[6px] h-9 bg-[#F07218] rounded-sm"></span>
+          <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#081C36] tracking-tight">
+            Capacidad en Maestranza, Terreno y Normativas
+          </h2>
+        </div>
+      </div>
+      <p class="text-slate-600 text-sm sm:text-base max-w-xl leading-relaxed">
+        Integramos prefabricación controlada en maestranza con ejecución segura en faena, cumpliendo las normativas técnicas exigidas por los principales mandantes de Chile.
+      </p>
+    </div>
+
+    <!-- Dual Capability Cards: Maestranza vs Terreno -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-7 mb-12">
+      {capabilities.map((cap) => (
+        <div class="rounded-2xl bg-carbon-steel text-white p-7 sm:p-8 shadow-xl border border-white/15 relative overflow-hidden group">
+          <span class="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#F07218] via-amber-400 to-transparent"></span>
+          
+          <div class="flex items-center justify-between gap-4 mb-5">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#F07218]/20 border border-[#F07218]/40 text-[#FF8A33] font-mono-tech font-bold text-[11px] uppercase tracking-wider">
+              {cap.badge}
+            </span>
+            <span class="font-mono-tech font-bold text-xs text-slate-400">
+              {cap.code}
+            </span>
+          </div>
+
+          <h3 class="font-heading font-extrabold text-xl sm:text-2xl text-white mb-2">
+            {cap.title}
+          </h3>
+          <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+            {cap.subtitle}
+          </p>
+
+          <ul class="space-y-3 border-t border-white/12 pt-5">
+            {cap.items.map((item) => (
+              <li class="flex items-start gap-3 text-xs sm:text-[13.5px] text-slate-200 leading-relaxed">
+                <svg class="w-4 h-4 text-[#F07218] shrink-0 mt-1" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <!-- Standards & Compliance Grid -->
+    <div class="rounded-2xl bg-[#F3F6FA] border border-slate-200/90 p-6 sm:p-8 bg-light-grid">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-6 border-b border-slate-200/90">
+        <div>
+          <span class="font-mono-tech text-[10.5px] font-bold uppercase tracking-widest text-[#F07218]">
+            ESTÁNDARES DE INGENIERÍA // QA/QC & HSE
+          </span>
+          <h3 class="font-heading font-extrabold text-lg sm:text-xl text-[#081C36] mt-0.5">
+            Códigos y Normativas Técnicas Aplicadas por EC Ingeniería
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">
+            Cada contrato incluye entrega de Dossier de Calidad completo, certificados de colada, protocolos END y planos As-Built.
+          </p>
+        </div>
+        <button
+          type="button"
+          data-open-ai-agent
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#081C36] hover:bg-[#F07218] text-white font-mono-tech font-bold text-xs uppercase tracking-wider transition-colors shrink-0 shadow-sm"
+        >
+          <span>Consultar Normas en Agente IA</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {standards.map((std) => (
+          <div class="card-engineered rounded-xl p-5">
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="inline-block px-2.5 py-1 rounded bg-[#081C36] text-[#F07218] font-mono-tech font-bold text-xs tracking-wide">
+                {std.code}
+              </span>
+              <span class="font-mono-tech text-[10px] font-bold text-slate-400 uppercase">
+                {std.tag}
+              </span>
+            </div>
+            <h4 class="font-heading font-bold text-sm sm:text-[15px] text-[#081C36] mb-1.5">
+              {std.name}
+            </h4>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              {std.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>

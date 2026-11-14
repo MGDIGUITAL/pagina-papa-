@@ -1,0 +1,80 @@
+---
+const steps = [
+  {
+    step: "01",
+    code: "FASE-01",
+    title: "Levantamiento y Diagnóstico",
+    desc: "Visita técnica a terreno, análisis de bases de licitación (RFP), levantamiento dimensional 3D/CAD y evaluación de condiciones HSE en planta.",
+  },
+  {
+    step: "02",
+    code: "FASE-02",
+    title: "Ingeniería y Planificación",
+    desc: "Desarrollo de ingeniería de detalle, memorias de cálculo NCh, matriz de riesgos IPER, programación en Carta Gantt y Plan de Inspección y Ensayos (PIE).",
+  },
+  {
+    step: "03",
+    code: "FASE-03",
+    title: "Prefabricación en Maestranza",
+    desc: "Adquisición de materiales con certificados de colada, fabricación de estructuras y spools de piping bajo procedimientos WPS/PQR y control END.",
+  },
+  {
+    step: "04",
+    code: "FASE-04",
+    title: "Montaje Seguro en Terreno",
+    desc: "Movilización de cuadrillas acreditadas, supervisión HSE permanente, maniobras de izaje Rigging, montaje electromecánico y canalizaciones.",
+  },
+  {
+    step: "05",
+    code: "FASE-05",
+    title: "Pruebas, PEM y Dossier QA/QC",
+    desc: "Pruebas hidrostáticas/lazos, caminatas Punch List, Puesta en Marcha (PEM), entrega de planos As-Built y Dossier de Calidad final.",
+  },
+];
+---
+
+<section id="proceso" class="py-16 lg:py-22 bg-carbon-steel text-white relative overflow-hidden border-b border-white/10">
+  <!-- Blueprint Grid Overlay -->
+  <div class="absolute inset-0 bg-blueprint-grid opacity-45 pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/[0.07] border border-white/15 font-mono-tech font-bold text-[11px] uppercase tracking-widest text-[#F07218] mb-2">
+          <span>CICLO DE EJECUCIÓN EPC // EC INGENIERÍA</span>
+        </div>
+        <div class="flex items-center gap-3.5 mt-1">
+          <span class="w-[6px] h-9 bg-[#F07218] rounded-sm"></span>
+          <h2 class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
+            Metodología y Proceso de Trabajo
+          </h2>
+        </div>
+      </div>
+      <p class="text-slate-300 text-sm sm:text-base max-w-xl leading-relaxed">
+        Ejecutamos cada proyecto bajo un flujo de control trazable en 5 fases que garantiza cumplimiento de plazos, presupuesto y estándar Cero Daño.
+      </p>
+    </div>
+
+    <!-- 5 Steps Horizontal Engineered Timeline -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      {steps.map((item) => (
+        <div class="relative rounded-2xl card-dark-engineered p-6 group hover:-translate-y-1">
+          <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+            <span class="font-mono-tech font-extrabold text-2xl text-[#F07218]">
+              {item.step}
+            </span>
+            <span class="font-mono-tech text-[10px] font-bold px-2 py-0.5 rounded bg-white/[0.06] text-slate-300 border border-white/10 group-hover:border-[#F07218]/50 group-hover:text-amber-300 transition-colors">
+              {item.code}
+            </span>
+          </div>
+          <h3 class="font-heading font-bold text-base sm:text-[16.5px] text-white mb-2.5 leading-snug group-hover:text-[#F07218] transition-colors">
+            {item.title}
+          </h3>
+          <p class="text-xs sm:text-[12.5px] text-slate-300 leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

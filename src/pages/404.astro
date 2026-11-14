@@ -1,0 +1,38 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Página no encontrada | EC Ingeniería">
+  <Header />
+  <main class="flex-1 flex items-center justify-center py-24 px-5 bg-[#081C36] text-white bg-blueprint-grid">
+    <div class="max-w-xl text-center space-y-6">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F07218]/20 border border-[#F07218]/40 text-[#FF8A33] font-heading font-bold text-xs uppercase tracking-widest">
+        Código Técnico 404
+      </div>
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl text-white">
+        Ruta o Documento No Encontrado
+      </h1>
+      <p class="text-slate-300 text-base leading-relaxed">
+        La dirección solicitada no existe o ha sido actualizada en nuestro portal de ingeniería. Puede regresar al inicio o descargar nuestro Dossier Técnico Corporativo.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <a
+          href="/"
+          class="px-6 py-3 rounded-xl bg-[#F07218] hover:bg-[#D95D07] text-white font-heading font-bold text-sm uppercase tracking-wider transition-all"
+        >
+          Volver al Inicio
+        </a>
+        <a
+          href="/assets/Dossier_Corporativo_EC_Ingenieria.pdf"
+          download="Dossier_Corporativo_EC_Ingenieria.pdf"
+          class="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-heading font-bold text-sm uppercase tracking-wider transition-all"
+        >
+          Descargar Dossier PDF
+        </a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>

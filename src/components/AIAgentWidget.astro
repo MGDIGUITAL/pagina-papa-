@@ -1,0 +1,535 @@
+---
+---
+
+<!-- Floating Compact B2B AI Assistant (EC Ingeniería) -->
+<div class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+
+  <!-- AI Assistant Modal Panel -->
+  <div
+    id="ai-agent-panel"
+    class="hidden w-[350px] sm:w-[380px] h-[520px] max-h-[82vh] rounded-2xl bg-white border border-slate-200/90 shadow-[0_20px_50px_rgba(8,28,54,0.22)] overflow-hidden flex-col transition-all duration-300"
+    role="dialog"
+    aria-label="Asistente de Cotizaciones — EC Ingeniería"
+  >
+    <!-- 1. Sleek Compact Header -->
+    <div class="bg-[#081C36] px-4 py-3 text-white flex items-center justify-between gap-3 border-b border-white/10 shrink-0">
+      <div class="flex items-center gap-2.5">
+        <div class="relative w-8 h-8 rounded-lg bg-gradient-to-br from-[#F58220] to-[#D95D07] text-white font-mono-tech font-extrabold text-xs flex items-center justify-center shadow-sm">
+          EC
+          <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-[#081C36]"></span>
+        </div>
+        <div>
+          <h3 class="font-heading font-extrabold text-[13px] leading-tight text-white flex items-center gap-1.5">
+            EC Ingeniería
+            <span class="px-1.5 py-0.5 rounded bg-white/10 text-slate-300 text-[9px] font-mono-tech font-normal">IA</span>
+          </h3>
+          <p class="text-[10.5px] text-emerald-400 font-medium flex items-center gap-1 leading-none mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            Asistente en línea • Cobertura Nacional
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-1">
+        <!-- Restart Conversation Button -->
+        <button
+          type="button"
+          id="reset-ai-chat"
+          class="w-7 h-7 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors"
+          title="Reiniciar conversación"
+          aria-label="Reiniciar conversación"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+          </svg>
+        </button>
+
+        <!-- Close Modal Button -->
+        <button
+          type="button"
+          id="close-ai-agent"
+          class="w-7 h-7 rounded-lg text-slate-300 hover:text-white hover:bg-white/10 flex items-center justify-center transition-colors"
+          aria-label="Cerrar asistente"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. Chat Conversation Scroll Area -->
+    <div
+      id="ai-chat-messages"
+      class="flex-1 p-3.5 space-y-3 overflow-y-auto bg-[#F7F9FC] text-[12px] text-slate-700"
+    >
+      <!-- Initial Clean Welcome Bubble -->
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-md bg-[#081C36] text-[#F07218] font-mono-tech font-extrabold text-[9px] flex items-center justify-center shrink-0 mt-0.5">
+          EC
+        </div>
+        <div class="bg-white rounded-xl rounded-tl-sm p-3 border border-slate-200/80 shadow-sm space-y-2 max-w-[90%] leading-relaxed">
+          <p class="font-bold text-[#081C36]">
+            ¡Hola! Bienvenido a <span class="text-[#F07218]">EC Ingeniería</span>.
+          </p>
+          <p class="text-slate-600 text-[11.5px]">
+            Cotizamos y ejecutamos obras de ingeniería, montaje, piping y paradas de planta con cobertura en todo Chile.
+          </p>
+          <p class="text-[11px] font-semibold text-slate-500">
+            ¿Cómo prefiere comenzar?
+          </p>
+          <div class="flex flex-col gap-1.5 pt-1">
+            <button
+              type="button"
+              data-ai-wizard="start"
+              class="w-full text-left flex items-center justify-between px-3 py-2 rounded-lg bg-[#F07218] hover:bg-[#D95D07] text-white font-heading font-bold text-xs transition-colors shadow-sm"
+            >
+              <span>📋 Cotizar Proyecto o Licitación</span>
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              data-ai-query="Solicitud de visita técnica a terreno"
+              class="w-full text-left flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#081C36] font-semibold text-[11.5px] transition-colors"
+            >
+              <span>👷 Solicitar Visita Técnica a Terreno</span>
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              data-ai-query="Especialidades técnicas y normativas aplicadas"
+              class="w-full text-left flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#081C36] font-semibold text-[11.5px] transition-colors"
+            >
+              <span>📐 Especialidades & Normas (AWS / ASME / SEC)</span>
+              <svg class="w-3.5 h-3.5 text-slate-400 shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Clean Input Form & Contact Subline -->
+    <div class="p-2.5 bg-white border-t border-slate-200 shrink-0 space-y-1.5">
+      <form id="ai-chat-form" class="flex items-center gap-1.5">
+        <input
+          type="text"
+          id="ai-chat-input"
+          placeholder="Escriba su consulta o requerimiento..."
+          class="flex-1 px-3 py-2 rounded-xl bg-slate-100 border border-slate-200/90 text-[12px] text-[#081C36] placeholder-slate-400 focus:outline-none focus:border-[#F07218] focus:bg-white transition-all"
+        />
+        <button
+          type="submit"
+          class="w-9 h-9 rounded-xl bg-[#081C36] hover:bg-[#F07218] text-white flex items-center justify-center transition-colors shrink-0 shadow-sm"
+          aria-label="Enviar mensaje"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </svg>
+        </button>
+      </form>
+
+      <div class="flex items-center justify-between text-[10px] text-slate-400 px-1 font-mono-tech">
+        <span>Licitaciones: contacto@ecingenieria.cl</span>
+        <a href="tel:+56920937495" class="text-slate-500 hover:text-[#F07218] font-bold">+56 9 2093 7495</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Circular Launcher Button (Branded FAB with Emblem & Online Pulse) -->
+  <button
+    type="button"
+    id="toggle-ai-agent"
+    aria-label="Abrir Copiloto Técnico — EC Ingeniería"
+    class="relative group w-14 h-14 rounded-full bg-white hover:bg-slate-50 border-2 border-slate-200 hover:border-[#F07218] shadow-[0_8px_30px_rgba(8,28,54,0.22)] hover:shadow-[0_12px_35px_rgba(240,114,24,0.35)] flex items-center justify-center transition-all duration-300 hover:-translate-y-1 active:scale-95 cursor-pointer"
+  >
+    <img
+      src="/assets/logo-emblem.png"
+      alt="EC Ingeniería AI"
+      class="w-9 h-9 object-contain transition-transform duration-300 group-hover:scale-110"
+      width="36"
+      height="36"
+      loading="lazy"
+    />
+    <!-- Pulsing Green Online Indicator Badge -->
+    <span class="absolute -top-0.5 -right-0.5 flex h-3.5 w-3.5 pointer-events-none">
+      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500 border-2 border-white shadow-xs"></span>
+    </span>
+  </button>
+</div>
+
+<style>
+  /* Clean subtle scrollbar inside chat container (eliminates harsh orange track) */
+  #ai-chat-messages::-webkit-scrollbar {
+    width: 5px;
+  }
+  #ai-chat-messages::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  #ai-chat-messages::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+  }
+  #ai-chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+</style>
+
+<script>
+  const panel = document.getElementById('ai-agent-panel');
+  const toggleBtn = document.getElementById('toggle-ai-agent');
+  const closeBtn = document.getElementById('close-ai-agent');
+  const resetBtn = document.getElementById('reset-ai-chat');
+  const chatMessages = document.getElementById('ai-chat-messages');
+  const chatForm = document.getElementById('ai-chat-form') as HTMLFormElement | null;
+  const chatInput = document.getElementById('ai-chat-input') as HTMLInputElement | null;
+
+  function openPanel() {
+    panel?.classList.remove('hidden');
+    panel?.classList.add('flex');
+    chatInput?.focus();
+  }
+
+  function closePanel() {
+    panel?.classList.add('hidden');
+    panel?.classList.remove('flex');
+  }
+
+  toggleBtn?.addEventListener('click', () => {
+    if (panel?.classList.contains('hidden')) {
+      openPanel();
+    } else {
+      closePanel();
+    }
+  });
+
+  closeBtn?.addEventListener('click', closePanel);
+
+  // External triggers across the site ([data-open-ai-agent])
+  document.querySelectorAll('[data-open-ai-agent]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      openPanel();
+      startWizard();
+    });
+  });
+
+  // Wizard state for simple 3-step quotation
+  let wizardState = {
+    specialty: '',
+    sector: '',
+    urgency: '',
+  };
+
+  function appendUserMessage(text: string) {
+    if (!chatMessages) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'flex justify-end';
+    wrapper.innerHTML = `
+      <div class="bg-[#081C36] text-white rounded-xl rounded-tr-sm px-3 py-2 max-w-[85%] shadow-sm leading-relaxed text-[11.5px]">
+        ${text}
+      </div>
+    `;
+    chatMessages.appendChild(wrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function appendBotMessage(html: string) {
+    if (!chatMessages) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'flex items-start gap-2';
+    wrapper.innerHTML = `
+      <div class="w-6 h-6 rounded-md bg-[#081C36] text-[#F07218] font-mono-tech font-extrabold text-[9px] flex items-center justify-center shrink-0 mt-0.5">
+        EC
+      </div>
+      <div class="bg-white rounded-xl rounded-tl-sm p-3 border border-slate-200/80 shadow-sm space-y-2 max-w-[90%] leading-relaxed text-[11.5px]">
+        ${html}
+      </div>
+    `;
+    chatMessages.appendChild(wrapper);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function resetChat() {
+    if (!chatMessages) return;
+    wizardState = { specialty: '', sector: '', urgency: '' };
+    chatMessages.innerHTML = `
+      <div class="flex items-start gap-2">
+        <div class="w-6 h-6 rounded-md bg-[#081C36] text-[#F07218] font-mono-tech font-extrabold text-[9px] flex items-center justify-center shrink-0 mt-0.5">
+          EC
+        </div>
+        <div class="bg-white rounded-xl rounded-tl-sm p-3 border border-slate-200/80 shadow-sm space-y-2 max-w-[90%] leading-relaxed">
+          <p class="font-bold text-[#081C36]">
+            Conversación reiniciada.
+          </p>
+          <p class="text-slate-600 text-[11.5px]">
+            ¿En qué podemos asistirle con su próximo requerimiento u obra?
+          </p>
+          <div class="flex flex-col gap-1.5 pt-1">
+            <button
+              type="button"
+              data-ai-wizard="start"
+              class="w-full text-left flex items-center justify-between px-3 py-2 rounded-lg bg-[#F07218] hover:bg-[#D95D07] text-white font-heading font-bold text-xs transition-colors shadow-sm"
+            >
+              <span>📋 Cotizar Proyecto o Licitación</span>
+              <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              data-ai-query="Solicitud de visita técnica a terreno"
+              class="w-full text-left flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200 text-[#081C36] font-semibold text-[11.5px] transition-colors"
+            >
+              <span>👷 Solicitar Visita Técnica a Terreno</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  resetBtn?.addEventListener('click', resetChat);
+
+  // 3-Step Guided Quotation
+  function startWizard() {
+    appendUserMessage('📋 Cotizar Proyecto o Licitación');
+    appendBotMessage(`
+      <p class="font-bold text-[#081C36]">Paso 1 de 3: Especialidad Principal</p>
+      <p class="text-slate-600 text-[11px]">Seleccione la partida requerida:</p>
+      <div class="grid grid-cols-1 gap-1 pt-1">
+        <button type="button" data-wiz-step1="Fabricación y Montaje de Estructuras" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Estructuras Metálicas & Naves (AWS D1.1)
+        </button>
+        <button type="button" data-wiz-step1="Piping e Instalaciones Industriales" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Piping Industrial & Red de Incendio NFPA
+        </button>
+        <button type="button" data-wiz-step1="Montaje Industrial y Electromecánico" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Montaje Electromecánico & Correas Overland
+        </button>
+        <button type="button" data-wiz-step1="Electricidad e Instrumentación" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Electricidad Industrial, Salas CCM & SEC
+        </button>
+        <button type="button" data-wiz-step1="Mantenimiento Industrial" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Mantenimiento & Parada de Planta (Shutdown)
+        </button>
+        <button type="button" data-wiz-step1="Ingeniería y Desarrollo de Proyectos" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          • Ingeniería de Detalle, Cálculo NCh 2369 & CAD
+        </button>
+      </div>
+    `);
+  }
+
+  function handleStep2(specialty: string) {
+    wizardState.specialty = specialty;
+    appendUserMessage(specialty);
+    appendBotMessage(`
+      <p class="font-bold text-[#081C36]">Paso 2 de 3: Ubicación y Sector</p>
+      <p class="text-slate-600 text-[11px]">¿En qué faena o zona de Chile se ejecuta la obra?</p>
+      <div class="grid grid-cols-1 gap-1 pt-1">
+        <button type="button" data-wiz-step2="Gran Minería (Zona Norte / Cordillera)" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          ⛏️ Gran Minería (Zona Norte / Cordillera)
+        </button>
+        <button type="button" data-wiz-step2="Planta Industrial / Procesos (Zona Central)" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          🏭 Planta Industrial / Manufactura (Zona Central)
+        </button>
+        <button type="button" data-wiz-step2="Terminal Portuario / Energía / Celulosa (Sur)" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          ⚓ Terminal Portuario / Energía / Celulosa (Sur)
+        </button>
+      </div>
+    `);
+  }
+
+  function handleStep3(sector: string) {
+    wizardState.sector = sector;
+    appendUserMessage(sector);
+    appendBotMessage(`
+      <p class="font-bold text-[#081C36]">Paso 3 de 3: Estado de Antecedentes</p>
+      <div class="grid grid-cols-1 gap-1 pt-1">
+        <button type="button" data-wiz-step3="Bases Técnicas y Planos Disponibles" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          📋 Dispongo de Bases Técnicas / Planos para cotizar
+        </button>
+        <button type="button" data-wiz-step3="Solicitud de Visita Técnica en Terreno" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          👷 Requiero Visita Técnica de levantamiento en faena
+        </button>
+        <button type="button" data-wiz-step3="Emergencia Operacional / Parada 24/7" class="text-left px-2.5 py-1.5 rounded-lg bg-slate-50 hover:bg-orange-50 border border-slate-200 hover:border-[#F07218] text-[#081C36] font-medium text-[11px] transition-colors">
+          🚨 Parada de Planta programada o Urgencia Operacional
+        </button>
+      </div>
+    `);
+  }
+
+  function finishWizard(urgency: string) {
+    wizardState.urgency = urgency;
+    appendUserMessage(urgency);
+
+    const waText = encodeURIComponent(
+      `Hola EC Ingeniería, generé esta solicitud en el asistente web:\n` +
+      `• Especialidad: ${wizardState.specialty}\n` +
+      `• Faena/Sector: ${wizardState.sector}\n` +
+      `• Modalidad: ${wizardState.urgency}\n` +
+      `• Cobertura: Nacional, Chile\n` +
+      `Solicito coordinación técnica o cotización.`
+    );
+
+    appendBotMessage(`
+      <p class="font-bold text-emerald-700">✓ Resumen del Requerimiento</p>
+      <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-[11px] space-y-0.5 font-mono-tech">
+        <div>• <strong>Partida:</strong> ${wizardState.specialty}</div>
+        <div>• <strong>Sector:</strong> ${wizardState.sector}</div>
+        <div>• <strong>Estado:</strong> ${wizardState.urgency}</div>
+      </div>
+      <p class="text-slate-600 text-[11px]">¿Cómo prefiere despacharlo al equipo técnico?</p>
+      <div class="flex flex-col gap-1.5 pt-1">
+        <a
+          href="https://wa.me/56920937495?text=${waText}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-heading font-bold text-center text-[11px] transition-colors shadow-sm"
+        >
+          Enviar a WhatsApp (+56 9 2093 7495)
+        </a>
+        <button
+          type="button"
+          data-wiz-autofill="true"
+          class="w-full py-2 px-3 rounded-lg bg-[#081C36] hover:bg-[#F07218] text-white font-heading font-bold text-center text-[11px] transition-colors"
+        >
+          Cargar en Formulario de Contacto
+        </button>
+      </div>
+    `);
+  }
+
+  function processNaturalQuery(rawQuery: string) {
+    const q = rawQuery.toLowerCase();
+
+    if (q.includes('estructura') || q.includes('aws') || q.includes('nave') || q.includes('galpon') || q.includes('galpón') || q.includes('soldadura')) {
+      return `
+        <p class="font-bold text-[#081C36]">🏗️ Estructuras Metálicas (AWS D1.1)</p>
+        <p class="text-slate-600 text-[11px]">Fabricamos en maestranza y montamos en terreno naves industriales, pipe racks y pasarelas bajo norma sísmica <strong>NCh 2369</strong> y soldadura calificada <strong>AWS D1.1</strong>, con ensayos END y pintura epóxica.</p>
+        <button type="button" data-wiz-step1="Fabricación y Montaje de Estructuras" class="px-2.5 py-1.5 rounded-lg bg-[#F07218] text-white font-heading font-bold text-[11px]">Cotizar esta partida</button>
+      `;
+    }
+
+    if (q.includes('piping') || q.includes('nfpa') || q.includes('incendio') || q.includes('cañeria') || q.includes('cañería') || q.includes('asme')) {
+      return `
+        <p class="font-bold text-[#081C36]">🔥 Piping & Redes Contra Incendio</p>
+        <p class="text-slate-600 text-[11px]">Spools en acero carbono, inoxidable y HDPE (<strong>ASME B31.3</strong>) y redes húmedas/secas <strong>NFPA 13 / 14 / 20 / 24</strong> con salas de bombas y pruebas hidrostáticas certificadas a 200 PSI.</p>
+        <button type="button" data-wiz-step1="Piping e Instalaciones Industriales" class="px-2.5 py-1.5 rounded-lg bg-[#F07218] text-white font-heading font-bold text-[11px]">Cotizar Piping / NFPA</button>
+      `;
+    }
+
+    if (q.includes('electr') || q.includes('sec') || q.includes('instrument') || q.includes('ccm') || q.includes('tablero')) {
+      return `
+        <p class="font-bold text-[#081C36]">⚡ Electricidad e Instrumentación (SEC)</p>
+        <p class="text-slate-600 text-[11px]">Montaje de salas eléctricas, tableros CCM, canalizaciones EPC/Conduit, mallas a tierra, Loop Check y certificación SEC TE1 según Pliegos Técnicos RIC.</p>
+        <button type="button" data-wiz-step1="Electricidad e Instrumentación" class="px-2.5 py-1.5 rounded-lg bg-[#F07218] text-white font-heading font-bold text-[11px]">Cotizar Electricidad</button>
+      `;
+    }
+
+    if (q.includes('visita') || q.includes('terreno') || q.includes('faena')) {
+      return `
+        <p class="font-bold text-[#081C36]">👷 Visitas Técnicas en Terreno</p>
+        <p class="text-slate-600 text-[11px]">Coordinamos visitas técnicas de levantamiento dimensional en plantas y faenas de todo Chile con personal acreditado en seguridad minera (DS 132).</p>
+        <div class="pt-1 flex gap-2">
+          <a href="https://wa.me/56920937495?text=Hola%20EC%20Ingenier%C3%ADa,%20solicito%20coordinar%20una%20visita%20t%C3%A9cnica%20a%20faena." target="_blank" class="px-2.5 py-1.5 rounded-lg bg-emerald-600 text-white font-bold text-[11px]">Coordinar por WhatsApp</a>
+        </div>
+      `;
+    }
+
+    if (q.includes('contacto') || q.includes('correo') || q.includes('telefono') || q.includes('teléfono') || q.includes('dossier')) {
+      return `
+        <p class="font-bold text-[#081C36]">Canales Oficiales — EC Ingeniería</p>
+        <div class="p-2 rounded-lg bg-slate-50 border border-slate-200 text-[11px] space-y-0.5 font-mono-tech">
+          <div>• <strong>Correo Licitaciones:</strong> contacto@ecingenieria.cl</div>
+          <div>• <strong>Teléfono / WhatsApp:</strong> +56 9 2093 7495</div>
+          <div>• <strong>Cobertura:</strong> Nacional, Chile</div>
+        </div>
+        <div class="pt-1 flex gap-2">
+          <a href="/assets/Dossier_Corporativo_EC_Ingenieria.pdf" download="Dossier_Corporativo_EC_Ingenieria.pdf" class="px-2.5 py-1.5 rounded-lg bg-[#081C36] text-white font-bold text-[11px]">Descargar Dossier PDF</a>
+        </div>
+      `;
+    }
+
+    return `
+      <p class="font-bold text-[#081C36]">EC Ingeniería — Obras & Montajes</p>
+      <p class="text-slate-600 text-[11px]">Desarrollamos proyectos integrales de estructuras, piping ASME/NFPA, electricidad SEC y mantenimiento de plantas en todo Chile.</p>
+      <button type="button" data-ai-wizard="start" class="px-3 py-1.5 rounded-lg bg-[#F07218] text-white font-heading font-bold text-[11px]">📋 Iniciar Cotización</button>
+    `;
+  }
+
+  // Click delegation
+  chatMessages?.addEventListener('click', (e) => {
+    const target = (e.target as HTMLElement).closest('button');
+    if (!target) return;
+
+    if (target.hasAttribute('data-ai-wizard')) {
+      startWizard();
+      return;
+    }
+
+    const query = target.getAttribute('data-ai-query');
+    if (query) {
+      appendUserMessage(query);
+      appendBotMessage(processNaturalQuery(query));
+      return;
+    }
+
+    const step1 = target.getAttribute('data-wiz-step1');
+    if (step1) {
+      handleStep2(step1);
+      return;
+    }
+
+    const step2 = target.getAttribute('data-wiz-step2');
+    if (step2) {
+      handleStep3(step2);
+      return;
+    }
+
+    const step3 = target.getAttribute('data-wiz-step3');
+    if (step3) {
+      finishWizard(step3);
+      return;
+    }
+
+    if (target.hasAttribute('data-wiz-autofill')) {
+      const serviceSelect = document.getElementById('service') as HTMLSelectElement | null;
+      const requestTypeSelect = document.getElementById('request_type') as HTMLSelectElement | null;
+      const messageInput = document.getElementById('message') as HTMLTextAreaElement | null;
+
+      if (serviceSelect && wizardState.specialty) {
+        serviceSelect.value = wizardState.specialty;
+      }
+      if (requestTypeSelect && wizardState.urgency) {
+        requestTypeSelect.value = wizardState.urgency;
+      }
+      if (messageInput) {
+        messageInput.value =
+          `[Solicitud generada con Asistente Web — EC Ingeniería]\n` +
+          `• Especialidad: ${wizardState.specialty}\n` +
+          `• Sector / Faena: ${wizardState.sector}\n` +
+          `• Estado / Modalidad: ${wizardState.urgency}\n` +
+          `• Alcance adicional: `;
+      }
+
+      closePanel();
+      document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+      messageInput?.focus();
+    }
+  });
+
+  chatForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = chatInput?.value.trim();
+    if (!val) return;
+    appendUserMessage(val);
+    if (chatInput) chatInput.value = '';
+    appendBotMessage(processNaturalQuery(val));
+  });
+</script>

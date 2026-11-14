@@ -1,0 +1,145 @@
+---
+const year = new Date().getFullYear();
+
+const navLinks = [
+  { name: "Inicio", href: "#inicio" },
+  { name: "Quiénes Somos", href: "#quienes-somos" },
+  { name: "Servicios", href: "#servicios" },
+  { name: "Proyectos Destacados", href: "#proyectos" },
+  { name: "Proceso de Trabajo", href: "#proceso" },
+  { name: "Contacto y Cotizaciones", href: "#contacto" },
+];
+
+const serviceLinks = [
+  { name: "Ingeniería y Desarrollo de Proyectos", href: "#servicio-ingenieria" },
+  { name: "Montaje Industrial y Electromecánico", href: "#servicio-montaje" },
+  { name: "Fabricación y Montaje de Estructuras", href: "#servicio-estructuras" },
+  { name: "Piping e Instalaciones Industriales", href: "#servicio-piping" },
+  { name: "Electricidad e Instrumentación", href: "#servicio-electricidad" },
+  { name: "Mantenimiento Industrial & Paradas", href: "#servicio-mantenimiento" },
+];
+---
+
+<footer class="bg-white text-slate-700 border-t border-slate-200 relative overflow-hidden">
+  
+  <!-- Subtle Top Accent Gradient Line -->
+  <div class="h-1 w-full bg-gradient-to-r from-[#081C36] via-[#F07218] to-[#081C36]"></div>
+
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12 pt-14 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-200">
+      
+      <!-- Col 1: Brand & Presentation (5 cols) -->
+      <div class="lg:col-span-5 space-y-5">
+        <a href="#inicio" class="inline-flex items-center gap-3.5 group" aria-label="EC Ingeniería - Inicio">
+          <!-- Crisp High-Resolution Corporate Logo on Pure White Background -->
+          <img
+            src="/assets/logo.webp"
+            alt="EC Ingeniería - Ingeniería, Proyectos, Montaje y Mantenimiento"
+            class="h-14 sm:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+            width="280"
+            height="80"
+            loading="lazy"
+          />
+        </a>
+
+        <p class="text-slate-600 text-sm leading-relaxed max-w-md">
+          Empresa chilena especializada en obras de ingeniería multidisciplinaria, montaje electromecánico, fabricación de estructuras metálicas, piping de alta exigencia y mantenimiento industrial para minería, energía e industria.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-2.5 pt-1">
+          <div class="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-heading font-semibold text-slate-700 shadow-sm">
+            ✓ Cumplimiento HSE (DS 132)
+          </div>
+          <div class="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-heading font-semibold text-slate-700 shadow-sm">
+            ✓ Dossier QA/QC & END
+          </div>
+          <a
+            href="/assets/Dossier_Corporativo_EC_Ingenieria.pdf"
+            download="Dossier_Corporativo_EC_Ingenieria.pdf"
+            class="px-3 py-1.5 rounded-lg bg-[#F07218] hover:bg-[#d95d08] shadow-sm text-xs font-heading font-bold text-white transition-all inline-flex items-center gap-1.5 hover:shadow-md"
+          >
+            <span>⬇</span>
+            <span>Descargar Dossier PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation Links (2 cols) -->
+      <div class="lg:col-span-2 space-y-4">
+        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-[#F07218]">
+          Navegación
+        </h3>
+        <ul class="space-y-2.5 text-xs sm:text-sm text-slate-600 font-medium">
+          {navLinks.map((link) => (
+            <li>
+              <a href={link.href} class="hover:text-[#081C36] hover:font-semibold hover:underline transition-all">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 3: Services (3 cols) -->
+      <div class="lg:col-span-3 space-y-4">
+        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-[#F07218]">
+          Especialidades
+        </h3>
+        <ul class="space-y-2.5 text-xs text-slate-600 font-medium">
+          {serviceLinks.map((srv) => (
+            <li>
+              <a href={srv.href} class="hover:text-[#081C36] hover:font-semibold hover:underline transition-all flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#F07218] flex-shrink-0"></span>
+                <span>{srv.name}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Col 4: Corporate Contact (2 cols) -->
+      <div class="lg:col-span-2 space-y-4">
+        <h3 class="font-heading font-bold text-xs uppercase tracking-wider text-[#F07218]">
+          Contacto
+        </h3>
+        <div class="space-y-3 text-xs text-slate-600">
+          <div>
+            <div class="text-slate-400 font-semibold mb-0.5 text-[11px] uppercase tracking-wide">Alcance Operativo:</div>
+            <div class="font-bold text-[#081C36]">Cobertura Nacional, Chile</div>
+          </div>
+
+          <div>
+            <div class="text-slate-400 font-semibold mb-0.5 text-[11px] uppercase tracking-wide">Correo Corporativo:</div>
+            <a href="mailto:contacto@ecingenieria.cl" class="text-[#F07218] hover:text-[#d95d08] hover:underline font-semibold break-all">
+              contacto@ecingenieria.cl
+            </a>
+          </div>
+
+          <div>
+            <div class="text-slate-400 font-semibold mb-0.5 text-[11px] uppercase tracking-wide">Teléfono & WhatsApp:</div>
+            <a href="tel:+56920937495" class="text-[#081C36] hover:text-[#F07218] font-bold">
+              +56 9 2093 7495
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div>
+        © {year} <strong class="text-[#081C36] font-bold">EC Ingeniería</strong>. Todos los derechos reservados.
+      </div>
+      <div class="flex items-center gap-4 text-slate-400 font-medium">
+        <span>Ingeniería</span>
+        <span>•</span>
+        <span>Proyectos</span>
+        <span>•</span>
+        <span>Montaje</span>
+        <span>•</span>
+        <span>Mantenimiento</span>
+      </div>
+    </div>
+  </div>
+</footer>

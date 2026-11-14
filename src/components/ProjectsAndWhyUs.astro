@@ -1,0 +1,554 @@
+---
+const featuredProjects = [
+  {
+    id: "proy-catemu",
+    code: "OBRA-01",
+    title: "Planta de Proceso Minero",
+    location: "Catemu, 2025",
+    image: "/assets/proyecto-1.webp",
+    category: "Minería y Procesos",
+    filterTag: "mineria",
+    featured: true,
+    clientType: "Compañía Minera Zona Central",
+    metrics: "340 Ton Estructura • 820 m Piping",
+    norm: "AWS D1.1 / ASME B31.3",
+    hse: "42.000 HH Sin Accidentes CTP",
+    scope: "Montaje electromecánico integral, fabricación y montaje de estructuras metálicas de soporte, plataformas de operación normadas y piping de proceso en acero carbono e inoxidable.",
+    deliverables: [
+      "Fabricación y montaje de edificios de proceso, pasarelas y barandas normadas NCh",
+      "Montaje de cañerías de proceso, válvulas de cuchillo y líneas de impulsión de pulpa",
+      "Alineamiento mecánico láser de equipos de molienda, harneros y bombeo",
+      "Entrega de Dossier QA/QC completo, protocolos END y planos As-Built"
+    ]
+  },
+  {
+    id: "proy-mejillones",
+    code: "OBRA-02",
+    title: "Red de Incendio Industrial",
+    location: "Mejillones, 2024",
+    image: "/assets/proyecto-2.webp",
+    category: "Piping & Red NFPA",
+    filterTag: "piping",
+    featured: true,
+    clientType: "Terminal Industrial & Energético",
+    metrics: "1.450 m Cañería SCH 40 • Sala Bombas",
+    norm: "NFPA 14 / NFPA 20 / NFPA 24",
+    hse: "28.500 HH Sin Accidentes CTP",
+    scope: "Ingeniería de detalle, prefabricación de spools en maestranza, montaje de anillo contra incendios bajo código NFPA y pruebas hidrostáticas certificadas a 200 PSI.",
+    deliverables: [
+      "Prefabricación, granallado SSPC-SP10 y pintura epóxica roja RAL 3000 de spools",
+      "Montaje de colectores, válvulas OS&Y, postes indicadores (PIV) y monitores",
+      "Integración de sala de bombas contra incendio diésel/eléctrica y bomba jockey",
+      "Pruebas hidrostáticas a 200 PSI, lavado interno (flushing) y acta de recepción"
+    ]
+  },
+  {
+    id: "proy-antofagasta",
+    code: "OBRA-03",
+    title: "Montaje de Estructuras",
+    location: "Antofagasta, 2023",
+    image: "/assets/proyecto-3.webp",
+    category: "Estructuras Metálicas",
+    filterTag: "estructuras",
+    featured: true,
+    clientType: "Complejo Industrial Logístico Minero",
+    metrics: "480 Ton Acero Estructural • 3.200 m²",
+    norm: "NCh 2369 / AWS D1.1",
+    hse: "35.000 HH Sin Accidentes CTP",
+    scope: "Fabricación en maestranza, pre-armado e izaje pesado de naves industriales, columnas de alma llena y racks de cañerías de alto tonelaje.",
+    deliverables: [
+      "Fabricación de columnas, vigas maestras y costaneras con control dimensional",
+      "Maniobras de izaje con grúas telescópicas y planes de Rigging certificados",
+      "Torqueo controlado de uniones empernadas de alta resistencia ASTM A325",
+      "Inspección ultrasónica (UT) y tintas penetrantes (PT) en uniones críticas"
+    ]
+  },
+  {
+    id: "proy-losandes",
+    code: "OBRA-04",
+    title: "Sistema de Transporte de Mineral",
+    location: "Los Andes, 2024",
+    image: "/assets/proyecto-4.webp",
+    category: "Montaje Electromecánico",
+    filterTag: "mineria",
+    featured: false,
+    clientType: "Operación Gran Minería del Cobre",
+    metrics: "650 m Correa Overland • 4 Chutes",
+    norm: "CEMA / ISO 9001 / DS 132",
+    hse: "51.200 HH Sin Accidentes CTP",
+    scope: "Montaje electromecánico integral de galería de correas transportadoras, estaciones motrices, reductores, chutes de transferencia y harneros vibratorios.",
+    deliverables: [
+      "Montaje estructural de mesas de polines, estaciones de impacto y retorno",
+      "Instalación y alineamiento láser de grupo motriz, motor y reductor planetario",
+      "Fabricación e instalación de chutes revestidos con placas bimetálicas antiabrasivas",
+      "Comisionamiento en vacío y pruebas con carga en Puesta en Marcha (PEM)"
+    ]
+  },
+  {
+    id: "proy-quintero",
+    code: "OBRA-05",
+    title: "Canalizaciones E&I y Salas CCM",
+    location: "Quintero, 2024",
+    image: "/assets/proyecto-5.webp",
+    category: "Electricidad e Instrumentación",
+    filterTag: "electricidad",
+    featured: false,
+    clientType: "Planta de Procesos Industriales",
+    metrics: "2.100 m EPC/Conduit • 85 Lazos",
+    norm: "SEC Pliegos RIC / ISA",
+    hse: "19.800 HH Sin Accidentes CTP",
+    scope: "Montaje de escalerillas portaconductores, bancos de conduit galvanizado, integración de gabinetes de control CCM e instrumentación de campo.",
+    deliverables: [
+      "Montaje de escalerillas (EPC), tubería conduit ANSI C80.1 y cajas NEMA 4X",
+      "Tendido, conectorizado y pruebas de aislación (Megger) de alimentadores",
+      "Instalación y calibración de transmisores de presión, flujo y temperatura",
+      "Pruebas de lazo punto a punto (Loop Check) e integración a sistema SCADA/PLC"
+    ]
+  },
+  {
+    id: "proy-rancagua",
+    code: "OBRA-06",
+    title: "Parada de Planta y Alineamiento",
+    location: "Rancagua, 2025",
+    image: "/assets/proyecto-6.webp",
+    category: "Mantenimiento Industrial",
+    filterTag: "mantenimiento",
+    featured: false,
+    clientType: "Planta Concentradora Minera",
+    metrics: "Shutdown 72 Horas • 12 Equipos",
+    norm: "ISO 10816 / ASME / LOTO",
+    hse: "14.400 HH Sin Accidentes CTP",
+    scope: "Ejecución de parada de planta programada (Shutdown): overhaul de bombas de pulpa de gran caudal, cambio de spools de desgaste y alineamiento láser.",
+    deliverables: [
+      "Desmontaje seguro bajo protocolo de bloqueo LOTO de equipos rotatorios",
+      "Reemplazo de rodete, carcasa y sellos mecánicos en bombas de impulsión",
+      "Sustitución de spools de acero inoxidable y válvulas de cuchillo de alta presión",
+      "Alineamiento láser de ejes motor-bomba y análisis vibracional post-arranque"
+    ]
+  },
+];
+
+const reasons = [
+  { title: "Ejecución Comprobada en Minería e Industria", desc: "Contratos ejecutados con éxito en plantas de proceso, terminales marítimos y faenas de alta exigencia operacional." },
+  { title: "Soldadores Calificados y Cuadrillas Multidisciplinarias", desc: "Personal acreditado bajo códigos AWS D1.1, ASME Sección IX y normativa eléctrica SEC." },
+  { title: "Estándar HSE Cero Daño y Calidad QA/QC Trazable", desc: "Cumplimiento estricto del DS 132, entrega de Dossier de Calidad, ensayos END y planos As-Built." },
+  { title: "Soluciones EPC Llave en Mano con Cobertura Nacional", desc: "Control integral desde la ingeniería y maestranza hasta el montaje en terreno y Puesta en Marcha (PEM)." },
+];
+---
+
+<section id="proyectos" class="py-14 lg:py-18 bg-gradient-to-b from-[#F3F6FA] to-white border-b border-slate-200/80 bg-light-grid">
+  <div class="max-w-[1440px] mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      
+      <!-- Left Column: Proyectos Destacados -->
+      <div class="lg:col-span-8 flex flex-col justify-between">
+        <div>
+          <!-- Section Heading + Interactive Filter Tabs -->
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+            <div class="flex items-start gap-3">
+              <span class="w-[5px] h-9 bg-[#F07218] rounded-sm mt-0.5"></span>
+              <div>
+                <div class="font-mono-tech text-[10.5px] font-bold uppercase tracking-widest text-[#F07218]">
+                  PORTAFOLIO DE OBRAS // EC INGENIERÍA
+                </div>
+                <h2 class="font-heading font-extrabold text-2xl sm:text-[27px] text-[#081C36] tracking-tight leading-none mt-0.5">
+                  Proyectos Destacados
+                </h2>
+                <p class="text-xs text-slate-500 mt-1.5">
+                  Seleccione cualquier obra para inspeccionar su Ficha Técnica, Normativa y Entregables QA/QC
+                </p>
+              </div>
+            </div>
+
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Filtrar proyectos">
+              <button
+                type="button"
+                data-filter="featured"
+                class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-[#081C36] text-white shadow-sm transition-all"
+              >
+                Destacados (3)
+              </button>
+              <button
+                type="button"
+                data-filter="all"
+                class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-white text-slate-600 hover:text-[#081C36] border border-slate-200/90 transition-all"
+              >
+                Todos (6)
+              </button>
+              <button
+                type="button"
+                data-filter="mineria"
+                class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-white text-slate-600 hover:text-[#081C36] border border-slate-200/90 transition-all"
+              >
+                Minería
+              </button>
+              <button
+                type="button"
+                data-filter="piping"
+                class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-white text-slate-600 hover:text-[#081C36] border border-slate-200/90 transition-all"
+              >
+                Piping & NFPA
+              </button>
+              <button
+                type="button"
+                data-filter="estructuras"
+                class="project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-white text-slate-600 hover:text-[#081C36] border border-slate-200/90 transition-all"
+              >
+                Estructuras
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Cards Grid -->
+          <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            {featuredProjects.map((project) => (
+              <article
+                data-project-card
+                data-featured={project.featured ? "true" : "false"}
+                data-category={project.filterTag}
+                data-project-json={JSON.stringify(project)}
+                class={`${project.featured ? "" : "hidden"} group cursor-pointer relative rounded-xl overflow-hidden card-dark-engineered hover:-translate-y-1 flex flex-col justify-between`}
+              >
+                <!-- Project Photo -->
+                <div class="relative h-52 sm:h-48 xl:h-52 w-full overflow-hidden bg-[#051224]">
+                  <img
+                    src={project.image}
+                    alt={`${project.title} - ${project.location} | EC Ingeniería`}
+                    class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#071930] via-[#071930]/20 to-black/30"></div>
+
+                  <!-- Top Badges Header Strip (Flex container completely prevents overlap) -->
+                  <div class="absolute top-3 inset-x-3 flex items-center justify-between gap-2 z-10 pointer-events-none">
+                    <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#061529]/92 backdrop-blur-md text-white text-[10px] font-mono-tech font-bold border border-white/15 shadow-sm min-w-0 max-w-[calc(100%-85px)]">
+                      <span class="text-[#F07218] shrink-0">{project.code}</span>
+                      <span class="text-white/30 shrink-0">|</span>
+                      <span class="truncate">{project.category}</span>
+                    </div>
+
+                    <div class="px-2 py-0.5 rounded bg-[#F07218] text-white text-[10px] font-mono-tech font-bold shadow-sm shrink-0 whitespace-nowrap">
+                      {project.norm.split('/')[0].trim()}
+                    </div>
+                  </div>
+
+                  <!-- Bottom Metrics Strip on Image -->
+                  <div class="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-[11px] font-mono-tech font-bold text-amber-300 drop-shadow">
+                    <span>{project.metrics}</span>
+                  </div>
+                </div>
+
+                <!-- Bottom Dark Caption -->
+                <div class="relative bg-gradient-to-b from-[#091D36] to-[#061427] px-4 py-3.5 border-t border-white/12 flex-1 flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-start gap-2">
+                      <svg class="w-4 h-4 text-[#F07218] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+                      </svg>
+                      <div>
+                        <h3 class="font-heading font-bold text-[15px] text-white leading-tight group-hover:text-[#F07218] transition-colors">
+                          {project.title}
+                        </h3>
+                        <p class="text-[12px] font-mono-tech text-slate-300 mt-0.5">
+                          {project.location}
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Technical Scope -->
+                    <p class="mt-2.5 pt-2.5 border-t border-white/10 text-[11.5px] text-slate-300/90 leading-relaxed line-clamp-2">
+                      {project.scope}
+                    </p>
+                  </div>
+
+                  <div class="mt-3 pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono-tech font-bold text-[#F07218] group-hover:text-amber-400">
+                    <span>INSPECCIONAR FICHA QA/QC</span>
+                    <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: ¿Por qué elegir EC Ingeniería? -->
+      <div class="lg:col-span-4 flex">
+        <div class="relative w-full rounded-2xl card-engineered bg-gradient-to-b from-white to-[#EEF3F8] p-6 sm:p-7 overflow-hidden flex flex-col justify-between">
+          <span class="absolute top-0 inset-x-0 h-[4px] bg-gradient-to-r from-[#081C36] via-[#F07218] to-[#081C36]"></span>
+
+          <!-- Subtle Industrial Gear Watermark -->
+          <svg
+            class="absolute -right-12 -bottom-12 w-56 h-56 text-slate-300/45 pointer-events-none select-none"
+            viewBox="0 0 100 100"
+            fill="currentColor"
+          >
+            <path d="M94.5,43.5l-8.6-1.4c-0.7-2.6-1.7-5.1-3-7.4l5.1-7.1c0.8-1.1,0.7-2.6-0.3-3.6l-6.8-6.8c-1-1-2.5-1.1-3.6-0.3l-7.1,5.1c-2.3-1.3-4.8-2.3-7.4-3l-1.4-8.6C61.2,9.1,60,8,58.6,8h-9.6c-1.4,0-2.6,1.1-2.8,2.5l-1.4,8.6c-2.6,0.7-5.1,1.7-7.4,3l-7.1-5.1c-1.1-0.8-2.6-0.7-3.6,0.3l-6.8,6.8c-1,1-1.1,2.5-0.3,3.6l5.1,7.1c-1.3,2.3-2.3,4.8-3,7.4l-8.6,1.4C11.7,43.7,10.6,44.9,10.6,46.3v9.6c0,1.4,1.1,2.6,2.5,2.8l8.6,1.4c0.7,2.6,1.7-5.1,3,7.4l-5.1,7.1c-0.8,1.1-0.7,2.6,0.3,3.6l6.8,6.8c1,1,2.5,1.1,3.6,0.3l7.1-5.1c2.3,1.3,4.8,2.3,7.4,3l1.4,8.6c0.2,1.4,1.4,2.5,2.8,2.5h9.6c1.4,0,2.6-1.1,2.8-2.5l1.4-8.6c2.6-0.7,5.1-1.7,7.4-3l7.1,5.1c1.1,0.8,2.6,0.7,3.6-0.3l6.8-6.8c1-1,1.1-2.5,0.3-3.6l-5.1-7.1c1.3-2.3,2.3-4.8,3-7.4l8.6-1.4c1.4-0.2,2.5-1.4,2.5-2.8v-9.6C97,44.9,95.9,43.7,94.5,43.5z M53.8,69.1c-9.9,0-18-8.1-18-18s8.1-18,18-18s18,8.1,18,18S63.7,69.1,53.8,69.1z"/>
+          </svg>
+
+          <div>
+            <!-- Heading with Orange Vertical Bar -->
+            <div class="relative z-10 flex items-center gap-3 mb-5">
+              <span class="w-[5px] h-8 bg-[#F07218] rounded-sm shrink-0"></span>
+              <div>
+                <span class="font-mono-tech text-[10px] font-bold uppercase tracking-widest text-slate-400 block">
+                   DIFERENCIADORES B2B
+                </span>
+                <h2 class="font-heading font-extrabold text-xl sm:text-[21px] text-[#081C36] tracking-tight leading-tight">
+                  ¿Por qué elegir EC Ingeniería?
+                </h2>
+              </div>
+            </div>
+
+            <!-- 4 Structured Value Pillars -->
+            <ul class="relative z-10 space-y-3.5">
+              {reasons.map((item) => (
+                <li class="flex items-start gap-3 bg-white/85 backdrop-blur-sm p-3 rounded-xl border border-slate-200/80 shadow-sm">
+                  <span class="w-5 h-5 rounded-md bg-[#F07218]/15 text-[#F07218] flex items-center justify-center shrink-0 mt-0.5">
+                    <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <div>
+                    <div class="text-[#081C36] font-heading font-bold text-[13px] leading-snug">
+                      {item.title}
+                    </div>
+                    <p class="text-[11.5px] text-slate-600 mt-0.5 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Executive Guarantee Strip inside Why Us Card -->
+          <div class="relative z-10 mt-5 pt-4 border-t border-slate-200/90 flex flex-col gap-3">
+            <div class="grid grid-cols-3 gap-2 text-center">
+              <div class="bg-white rounded-lg p-2 border border-slate-200/90 shadow-sm">
+                <div class="font-mono-tech font-extrabold text-xs text-[#081C36]">AWS / NFPA</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Código Técnico</div>
+              </div>
+              <div class="bg-white rounded-lg p-2 border border-slate-200/90 shadow-sm">
+                <div class="font-mono-tech font-extrabold text-xs text-[#F07218]">0% CTP</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Estándar HSE</div>
+              </div>
+              <div class="bg-white rounded-lg p-2 border border-slate-200/90 shadow-sm">
+                <div class="font-mono-tech font-extrabold text-xs text-[#081C36]">QA / QC</div>
+                <div class="text-[10px] text-slate-500 font-semibold">Dossier As-Built</div>
+              </div>
+            </div>
+
+            <a
+              href="/assets/Dossier_Corporativo_EC_Ingenieria.pdf"
+              download="Dossier_Corporativo_EC_Ingenieria.pdf"
+              class="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl bg-[#081C36] hover:bg-[#F07218] text-white font-mono-tech font-bold text-xs uppercase tracking-wider transition-colors shadow-sm"
+            >
+              <svg class="w-4 h-4 text-[#F07218] group-hover:text-white" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span>Descargar Dossier Corporativo (PDF)</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Technical Project Dossier Modal -->
+  <div
+    id="project-modal"
+    class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-[#041020]/85 backdrop-blur-md"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-project-title"
+  >
+    <div class="relative w-full max-w-3xl rounded-2xl bg-white border border-slate-200 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <!-- Modal Top Image Banner -->
+      <div class="relative h-56 sm:h-64 w-full bg-[#081C36] shrink-0">
+        <img
+          id="modal-project-image"
+          src="/assets/proyecto-1.webp"
+          alt="Detalle de proyecto EC Ingeniería"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#061529] via-[#061529]/45 to-transparent"></div>
+        
+        <button
+          type="button"
+          id="close-project-modal"
+          class="absolute top-4 right-4 w-10 h-10 rounded-full bg-[#081C36]/85 hover:bg-[#F07218] text-white flex items-center justify-center border border-white/20 transition-colors"
+          aria-label="Cerrar ficha técnica"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <div class="absolute bottom-4 left-6 right-6 flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <span id="modal-project-category" class="inline-block px-3 py-1 rounded-md bg-[#F07218] text-white font-mono-tech font-bold text-xs uppercase tracking-wider mb-2">
+              Categoría
+            </span>
+            <h3 id="modal-project-title" class="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+              Título del Proyecto
+            </h3>
+            <p id="modal-project-location" class="text-sm font-mono-tech text-slate-200 mt-0.5">
+              Ubicación
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        <!-- Technical KPI Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div class="p-3.5 rounded-xl bg-[#F3F6FA] border border-slate-200/90">
+            <div class="text-[10.5px] font-mono-tech font-bold uppercase text-slate-400">Magnitud / Alcance</div>
+            <div id="modal-project-metrics" class="font-mono-tech font-extrabold text-xs sm:text-sm text-[#081C36] mt-1">-</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#F3F6FA] border border-slate-200/90">
+            <div class="text-[10.5px] font-mono-tech font-bold uppercase text-slate-400">Normativa Aplicada</div>
+            <div id="modal-project-norm" class="font-mono-tech font-extrabold text-xs sm:text-sm text-[#F07218] mt-1">-</div>
+          </div>
+          <div class="p-3.5 rounded-xl bg-[#F3F6FA] border border-slate-200/90">
+            <div class="text-[10.5px] font-mono-tech font-bold uppercase text-slate-400">Desempeño HSE</div>
+            <div id="modal-project-hse" class="font-mono-tech font-extrabold text-xs sm:text-sm text-emerald-700 mt-1">-</div>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-[#081C36] mb-2">
+            Memoria Descriptiva y Alcance Técnico
+          </h4>
+          <p id="modal-project-scope" class="text-slate-600 text-sm leading-relaxed">
+            -
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-heading font-bold text-xs uppercase tracking-wider text-[#081C36] mb-3">
+            Partidas Ejecutadas y Protocolos QA/QC
+          </h4>
+          <ul id="modal-project-deliverables" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs sm:text-sm text-slate-700">
+          </ul>
+        </div>
+
+        <!-- Modal Footer Actions -->
+        <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 font-medium">
+            EC Ingeniería — Referencias y certificados de recepción disponibles para licitaciones.
+          </div>
+          <a
+            href="#contacto"
+            id="modal-quote-btn"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-b from-[#F58220] to-[#DC5B04] text-white font-heading font-bold text-xs uppercase tracking-wider shadow-md hover:opacity-95 transition-all"
+          >
+            <span>Cotizar un Proyecto Similar</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const filterBtns = document.querySelectorAll('.project-filter-btn');
+  const projectCards = document.querySelectorAll('[data-project-card]');
+  const modal = document.getElementById('project-modal');
+  const closeModalBtn = document.getElementById('close-project-modal');
+  const modalQuoteBtn = document.getElementById('modal-quote-btn');
+
+  // Filter logic
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.getAttribute('data-filter');
+
+      filterBtns.forEach((b) => {
+        b.className = 'project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-white text-slate-600 hover:text-[#081C36] border border-slate-200/90 transition-all';
+      });
+      btn.className = 'project-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono-tech font-bold bg-[#081C36] text-white shadow-sm transition-all';
+
+      projectCards.forEach((card) => {
+        const isFeatured = card.getAttribute('data-featured') === 'true';
+        const category = card.getAttribute('data-category');
+
+        if (filter === 'all') {
+          card.classList.remove('hidden');
+        } else if (filter === 'featured') {
+          card.classList.toggle('hidden', !isFeatured);
+        } else {
+          card.classList.toggle('hidden', category !== filter);
+        }
+      });
+    });
+  });
+
+  // Modal logic
+  projectCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const raw = card.getAttribute('data-project-json');
+      if (!raw || !modal) return;
+      const data = JSON.parse(raw);
+
+      const imgEl = document.getElementById('modal-project-image') as HTMLImageElement | null;
+      const catEl = document.getElementById('modal-project-category');
+      const titleEl = document.getElementById('modal-project-title');
+      const locEl = document.getElementById('modal-project-location');
+      const metricsEl = document.getElementById('modal-project-metrics');
+      const normEl = document.getElementById('modal-project-norm');
+      const hseEl = document.getElementById('modal-project-hse');
+      const scopeEl = document.getElementById('modal-project-scope');
+      const delivEl = document.getElementById('modal-project-deliverables');
+
+      if (imgEl) imgEl.src = data.image;
+      if (catEl) catEl.textContent = `${data.code} // ${data.category}`;
+      if (titleEl) titleEl.textContent = data.title;
+      if (locEl) locEl.textContent = `${data.location} • ${data.clientType}`;
+      if (metricsEl) metricsEl.textContent = data.metrics;
+      if (normEl) normEl.textContent = data.norm;
+      if (hseEl) hseEl.textContent = data.hse;
+      if (scopeEl) scopeEl.textContent = data.scope;
+
+      if (delivEl && Array.isArray(data.deliverables)) {
+        delivEl.innerHTML = data.deliverables
+          .map(
+            (item: string) => `
+            <li class="flex items-start gap-2 bg-slate-50 p-2.5 rounded-lg border border-slate-200/80">
+              <svg class="w-4 h-4 text-[#F07218] shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>${item}</span>
+            </li>`
+          )
+          .join('');
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    });
+  });
+
+  function closeModal() {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  }
+
+  closeModalBtn?.addEventListener('click', closeModal);
+  modalQuoteBtn?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>

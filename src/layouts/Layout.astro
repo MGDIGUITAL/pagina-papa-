@@ -1,0 +1,215 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "EC Ingeniería | Obras de Ingeniería Industrial, Proyectos, Montaje y Mantenimiento",
+  description = "Contratista EPC de Ingeniería Industrial, Fabricación y Montaje de Estructuras Metálicas, Piping ASME/NFPA, Electricidad SEC y Mantenimiento de Plantas con Cobertura Nacional en Chile. Contacto: contacto@ecingenieria.cl | +56 9 2093 7495",
+} = Astro.props;
+
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  "name": "EC Ingeniería",
+  "alternateName": "EC Ingeniería — Proyectos, Montaje y Mantenimiento Industrial",
+  "description": description,
+  "email": "contacto@ecingenieria.cl",
+  "telephone": "+56920937495",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cobertura Nacional",
+    "addressCountry": "CL"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Chile"
+  },
+  "knowsAbout": [
+    "Ingeniería Conceptual, Básica y de Detalle EPC/EPCM (NCh 2369)",
+    "Montaje Industrial, Mecánico y Electromecánico de Precisión",
+    "Fabricación y Montaje de Estructuras Metálicas Calificadas AWS D1.1",
+    "Piping Industrial ASME B31.3 y Redes Contra Incendio NFPA 13/14/20/24",
+    "Electricidad Industrial, Salas CCM e Instrumentación Normativa SEC RIC",
+    "Mantenimiento Industrial Integral y Paradas de Planta (Shutdowns)"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="EC Ingeniería, ingeniería industrial Chile, montaje industrial, montaje electromecánico, estructuras metálicas AWS D1.1, piping industrial ASME B31.3, red de incendio NFPA, electricidad e instrumentación SEC, mantenimiento industrial, paradas de planta, contratista minería Chile, cobertura nacional" />
+    <meta name="author" content="EC Ingeniería" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/assets/hero-bg.webp" />
+    <meta property="og:locale" content="es_CL" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700&family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <style is:global>
+      :root {
+        --navy-950: #051224;
+        --navy-900: #081C36;
+        --navy-800: #0D284A;
+        --brand-orange: #F07218;
+        --brand-orange-dark: #D95D07;
+        --surface-light: #F3F6FA;
+        --border-subtle: rgba(15, 38, 71, 0.11);
+      }
+
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        color: #081C36;
+        background-color: #F3F6FA;
+        font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      h1, h2, h3, h4, .font-heading {
+        font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+        letter-spacing: -0.02em;
+      }
+
+      .font-mono-tech {
+        font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Custom engineered scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #061529;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #F07218;
+        border-radius: 5px;
+        border: 2px solid #061529;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FF852E;
+      }
+
+      /* Dual-Scale Architectural CAD Blueprint Grid (Dark Mode) */
+      .bg-blueprint-grid {
+        background-image:
+          linear-gradient(to right, rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.065) 1px, transparent 1px),
+          linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+        background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+      }
+
+      /* Dual-Scale Technical Drafting Grid (Light Mode) */
+      .bg-light-grid {
+        background-image:
+          linear-gradient(to right, rgba(8, 28, 54, 0.055) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(8, 28, 54, 0.055) 1px, transparent 1px),
+          linear-gradient(to right, rgba(8, 28, 54, 0.022) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(8, 28, 54, 0.022) 1px, transparent 1px);
+        background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+      }
+
+      /* Carbon Steel Industrial Dark Surface Texture */
+      .bg-carbon-steel {
+        background-color: #071930;
+        background-image:
+          radial-gradient(circle at 85% 15%, rgba(240, 114, 24, 0.12), transparent 45%),
+          radial-gradient(circle at 15% 85%, rgba(30, 91, 176, 0.16), transparent 50%),
+          radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+        background-size: 100% 100%, 100% 100%, 20px 20px;
+      }
+
+      /* Engineered Industrial Card Surface with Specular Rim & Precision Border */
+      .card-engineered {
+        position: relative;
+        background: #FFFFFF;
+        border: 1px solid rgba(15, 38, 71, 0.12);
+        box-shadow:
+          0 1px 2px rgba(8, 28, 54, 0.04),
+          0 8px 24px -4px rgba(8, 28, 54, 0.06),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.9);
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card-engineered:hover {
+        border-color: rgba(240, 114, 24, 0.55);
+        box-shadow:
+          0 4px 12px rgba(8, 28, 54, 0.06),
+          0 18px 36px -6px rgba(8, 28, 54, 0.12),
+          inset 0 1px 0 0 rgba(255, 255, 255, 1);
+      }
+
+      /* Dark Glassmorphic Industrial Card */
+      .card-dark-engineered {
+        background: linear-gradient(145deg, rgba(13, 39, 73, 0.92) 0%, rgba(7, 23, 45, 0.96) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow:
+          0 14px 34px -6px rgba(3, 10, 22, 0.45),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.14);
+        transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .card-dark-engineered:hover {
+        border-color: rgba(240, 114, 24, 0.6);
+        box-shadow:
+          0 18px 40px -6px rgba(3, 10, 22, 0.6),
+          inset 0 1px 0 0 rgba(240, 114, 24, 0.35);
+      }
+
+      /* Technical Corner Crosshair Accents */
+      .tech-frame {
+        position: relative;
+      }
+      .tech-frame::before,
+      .tech-frame::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        border-color: rgba(240, 114, 24, 0.55);
+        pointer-events: none;
+        transition: all 0.25s ease;
+      }
+      .tech-frame::before {
+        top: -1px;
+        left: -1px;
+        border-top: 2px solid rgba(240, 114, 24, 0.7);
+        border-left: 2px solid rgba(240, 114, 24, 0.7);
+      }
+      .tech-frame::after {
+        bottom: -1px;
+        right: -1px;
+        border-bottom: 2px solid rgba(240, 114, 24, 0.7);
+        border-right: 2px solid rgba(240, 114, 24, 0.7);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="min-h-screen flex flex-col antialiased selection:bg-[#F07218] selection:text-white overflow-x-hidden">
+    <slot />
+  </body>
+</html>

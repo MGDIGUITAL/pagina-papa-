@@ -1,0 +1,270 @@
+---
+const servicesList = [
+  { code: "01", name: "Ingeniería y Desarrollo de Proyectos", norm: "NCh 2369 • BIM", href: "#servicio-ingenieria" },
+  { code: "02", name: "Montaje Industrial y Electromecánico", norm: "ISO 10816 • PEM", href: "#servicio-montaje" },
+  { code: "03", name: "Fabricación y Montaje de Estructuras Metálicas", norm: "AWS D1.1 • END", href: "#servicio-estructuras" },
+  { code: "04", name: "Piping e Instalaciones Industriales", norm: "ASME B31.3 • NFPA", href: "#servicio-piping" },
+  { code: "05", name: "Electricidad e Instrumentación", norm: "SEC TE1 • RIC", href: "#servicio-electricidad" },
+  { code: "06", name: "Mantenimiento Industrial y Paradas de Planta", norm: "DS 132 • LOTO", href: "#servicio-mantenimiento" },
+];
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-[0_6px_24px_rgba(8,28,54,0.08)]">
+  <!-- Top Corporate Contact & Coverage Bar (Navy Blue Executive Strip) -->
+  <div class="hidden md:block bg-[#081C36] text-white border-b border-white/10">
+    <div class="max-w-[1440px] mx-auto px-6 lg:px-10 py-1.5 flex items-center justify-between text-xs">
+      <!-- Left Institutional Tag -->
+      <div class="flex items-center gap-2 font-mono-tech text-[11px] text-slate-200">
+        <span class="inline-block w-2 h-2 rounded-full bg-[#F07218]"></span>
+        <span class="font-bold text-white">EC INGENIERÍA</span>
+        <span class="text-white/30">//</span>
+        <span class="hidden xl:inline text-slate-300">INGENIERÍA • PROYECTOS • MONTAJE • MANTENIMIENTO INDUSTRIAL</span>
+      </div>
+
+      <!-- Right Official Contact Channels -->
+      <div class="flex items-center gap-5 xl:gap-6 ml-auto font-semibold">
+        <div class="flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5 text-[#F07218] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+          <span class="text-white">Cobertura Nacional, Chile</span>
+        </div>
+
+        <span class="text-white/25 select-none">|</span>
+
+        <a
+          href="mailto:contacto@ecingenieria.cl"
+          class="flex items-center gap-1.5 text-slate-200 hover:text-[#F07218] transition-colors"
+        >
+          <svg class="w-3.5 h-3.5 text-[#F07218] shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          <span class="font-mono-tech text-[11.5px]">contacto@ecingenieria.cl</span>
+        </a>
+
+        <span class="text-white/25 select-none">|</span>
+
+        <a
+          href="tel:+56920937495"
+          class="flex items-center gap-1.5 font-mono-tech font-bold text-white hover:text-[#F07218] transition-colors"
+        >
+          <svg class="w-3.5 h-3.5 text-[#F07218] shrink-0" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.25 1.01l-2.2 2.2z"/>
+          </svg>
+          <span>+56 9 2093 7495</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main White Navbar with Corporate Navy Blue Text & Transparent Gear Logo -->
+  <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 bg-white">
+    <div class="flex items-center justify-between gap-4 py-2.5 lg:py-3">
+      
+      <!-- Left: Transparent Official Logo ("Logo corporativo EC Ingeniería con engranaje.png") -->
+      <a href="#inicio" class="flex items-center shrink-0 group focus:outline-none" aria-label="EC Ingeniería - Inicio">
+        <img
+          src="/assets/logo.png"
+          alt="EC Ingeniería - Ingeniería, Proyectos, Montaje y Mantenimiento"
+          class="h-12 sm:h-14 lg:h-[58px] w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+        />
+      </a>
+
+      <!-- Center: Desktop Navigation Links (White Background + Navy Blue Letters #081C36) -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-[13.5px] xl:text-[14px] font-heading font-bold text-[#081C36]">
+        <a
+          href="#inicio"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Inicio</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full"></span>
+        </a>
+
+        <a
+          href="#quienes-somos"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Quiénes Somos</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </a>
+
+        <!-- Dropdown Servicios -->
+        <div class="relative group">
+          <a
+            href="#servicios"
+            class="flex items-center gap-1.5 py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap"
+          >
+            <span>Servicios</span>
+            <svg class="w-3.5 h-3.5 text-[#F07218] transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="m19 9-7 7-7-7" />
+            </svg>
+          </a>
+          <!-- Hover Dropdown Menu -->
+          <div class="absolute left-0 top-full pt-2 w-[360px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="bg-white border border-slate-200 rounded-xl shadow-[0_18px_45px_rgba(8,28,54,0.16)] py-2 overflow-hidden">
+              <div class="px-4 py-1.5 border-b border-slate-100 flex items-center justify-between text-[10px] font-mono-tech uppercase tracking-wider text-slate-400">
+                <span>6 Divisiones Operativas</span>
+                <span class="text-[#F07218] font-bold">Norma Aplicada</span>
+              </div>
+              {servicesList.map((srv) => (
+                <a
+                  href={srv.href}
+                  class="flex items-center justify-between gap-3 px-4 py-2.5 text-xs font-semibold text-[#081C36] hover:bg-slate-50 hover:text-[#F07218] transition-colors border-l-2 border-transparent hover:border-[#F07218]"
+                >
+                  <div class="flex items-center gap-2.5">
+                    <span class="font-mono-tech font-bold text-[10px] text-[#F07218]">{srv.code}</span>
+                    <span class="leading-snug">{srv.name}</span>
+                  </div>
+                  <span class="font-mono-tech text-[10px] text-slate-400 shrink-0">{srv.norm}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="#proyectos"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Proyectos</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </a>
+
+        <a
+          href="#capacidades"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Normas & QA/QC</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </a>
+
+        <a
+          href="#proceso"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Proceso</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </a>
+
+        <a
+          href="#contacto"
+          class="relative py-2 text-[#081C36] hover:text-[#F07218] transition-colors whitespace-nowrap group"
+        >
+          <span>Contacto</span>
+          <span class="absolute bottom-0 left-0 right-0 h-[3px] bg-[#F07218] rounded-full scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
+        </a>
+      </nav>
+
+      <!-- Right: Desktop Action Buttons (Single-line, No Wrapping) -->
+      <div class="hidden lg:flex items-center gap-2.5 shrink-0">
+        <button
+          type="button"
+          data-open-ai-agent
+          class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-[#F3F6FA] hover:bg-[#081C36] text-[#081C36] hover:text-white font-heading font-bold text-xs border border-slate-200/90 hover:border-[#081C36] transition-all whitespace-nowrap shadow-sm"
+          title="Abrir Copiloto IA de Ingeniería y Cubicaciones"
+        >
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Copiloto IA</span>
+        </button>
+
+        <a
+          href="#contacto"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-b from-[#F58220] to-[#DE5E06] hover:from-[#FF8F33] hover:to-[#E8660C] text-white font-heading font-bold text-[13px] border border-[#FFA352]/40 shadow-[0_4px_14px_rgba(240,114,24,0.32)] hover:shadow-[0_6px_20px_rgba(240,114,24,0.48)] transition-all active:scale-[0.98] whitespace-nowrap"
+        >
+          <svg class="w-4 h-4 text-white shrink-0" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z" />
+          </svg>
+          <span>Solicitar Cotización</span>
+        </a>
+      </div>
+
+      <!-- Mobile Quick Actions + Hamburger -->
+      <div class="flex items-center gap-2 lg:hidden">
+        <button
+          type="button"
+          data-open-ai-agent
+          class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-[#081C36] text-white font-mono-tech font-bold text-[11px] shadow-sm whitespace-nowrap"
+          aria-label="Abrir Copiloto IA de Ingeniería"
+        >
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>IA</span>
+        </button>
+        <a
+          href="#contacto"
+          class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-gradient-to-b from-[#F58220] to-[#DF6007] text-white font-heading font-bold text-xs shadow-sm whitespace-nowrap"
+        >
+          <span>Cotizar</span>
+        </a>
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="p-2 rounded-lg text-[#081C36] hover:bg-slate-100 focus:outline-none"
+          aria-label="Abrir menú de navegación"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation (White Background + Navy Blue Text) -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-white text-[#081C36] border-t border-slate-200 px-5 py-4 space-y-3 shadow-xl">
+    <div class="flex flex-col space-y-1 text-sm font-heading font-bold">
+      <a href="#inicio" class="mobile-nav-link py-2 px-3 rounded-lg bg-slate-100 text-[#F07218]">Inicio</a>
+      <a href="#quienes-somos" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Quiénes Somos</a>
+      <a href="#servicios" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Servicios</a>
+      <a href="#proyectos" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Proyectos</a>
+      <a href="#capacidades" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Normas & QA/QC</a>
+      <a href="#proceso" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Proceso de Trabajo</a>
+      <a href="#contacto" class="mobile-nav-link py-2 px-3 rounded-lg hover:bg-slate-50">Contacto</a>
+    </div>
+    <div class="pt-3 border-t border-slate-200 flex flex-col gap-2 text-xs text-[#081C36] font-mono-tech font-semibold">
+      <div class="flex items-center gap-2">
+        <span class="text-[#F07218]">●</span>
+        <span>Cobertura Nacional, Chile</span>
+      </div>
+      <a href="mailto:contacto@ecingenieria.cl" class="flex items-center gap-2 hover:text-[#F07218]">
+        <span class="text-[#F07218]">●</span>
+        <span>contacto@ecingenieria.cl</span>
+      </a>
+      <a href="tel:+56920937495" class="flex items-center gap-2 hover:text-[#F07218]">
+        <span class="text-[#F07218]">●</span>
+        <span>+56 9 2093 7495</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  const links = document.querySelectorAll('.mobile-nav-link');
+
+  btn?.addEventListener('click', () => {
+    const isHidden = menu?.classList.contains('hidden');
+    if (isHidden) {
+      menu?.classList.remove('hidden');
+      iconOpen?.classList.add('hidden');
+      iconClose?.classList.remove('hidden');
+    } else {
+      menu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    }
+  });
+
+  links.forEach((link) => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>

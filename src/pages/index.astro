@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ServicesStrip from '../components/ServicesStrip.astro';
+import ProjectsAndWhyUs from '../components/ProjectsAndWhyUs.astro';
+import AboutUs from '../components/AboutUs.astro';
+import ServicesDetail from '../components/ServicesDetail.astro';
+import CapabilitiesAndStandards from '../components/CapabilitiesAndStandards.astro';
+import WorkProcess from '../components/WorkProcess.astro';
+import ContactSection from '../components/ContactSection.astro';
+import Footer from '../components/Footer.astro';
+import AIAgentWidget from '../components/AIAgentWidget.astro';
+---
+
+<Layout
+  title="EC Ingeniería | Obras de Ingeniería Industrial, Proyectos, Montaje y Mantenimiento"
+  description="Desarrollamos proyectos y obras de ingeniería con altos estándares de seguridad, calidad y cumplimiento para la minería, industria y energía. Cobertura Nacional, Chile | +56 9 2093 7495 | contacto@ecingenieria.cl"
+>
+  <!-- Sticky Corporate Header with Contact Bar and Sloped Navigation -->
+  <Header />
+
+  <main>
+    <!-- 1. Hero Section (Matches REFERENCIA.jfif layout & visuals + Executive Trust Strip) -->
+    <Hero />
+
+    <!-- 2. Services Bar with 6 Custom Duotone Technical Icons -->
+    <ServicesStrip />
+
+    <!-- 3. Proyectos Destacados (Interactive 6 HD Projects + Technical Dossier Modal) + ¿Por qué elegir EC Ingeniería? -->
+    <ProjectsAndWhyUs />
+
+    <!-- 4. Quiénes Somos / Respaldo Técnico / Métricas Corporativas -->
+    <AboutUs />
+
+    <!-- 5. Detalle de Especialidades de Ingeniería y Montaje -->
+    <ServicesDetail />
+
+    <!-- 6. Capacidad en Maestranza, Terreno y Normativas Técnicas (AWS / ASME / NFPA / SEC / DS 132) -->
+    <CapabilitiesAndStandards />
+
+    <!-- 7. Metodología y Proceso de Trabajo en 5 Etapas -->
+    <WorkProcess />
+
+    <!-- 8. Sección de Contacto y Cotización para contacto@ecingenieria.cl -->
+    <ContactSection />
+  </main>
+
+  <!-- Corporate Footer -->
+  <Footer />
+
+  <!-- Agente IA de Ingeniería & Licitaciones B2B + WhatsApp Directo (+56 9 2093 7495) -->
+  <AIAgentWidget />
+</Layout>
